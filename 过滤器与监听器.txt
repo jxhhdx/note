@@ -1,0 +1,82 @@
+<过滤器>
+	<简介>
+		实现对web资源请求的拦截，完成特殊的操作，尤其是对请求的预处理。
+		过滤器创建与销毁由web服务器实现。
+	<简介/>
+	<应用场景>
+		web资源权限访问控制，字符集编码处理，敏感字符过滤，响应信息压缩
+	<应用场景/>
+	<使用过程>
+		1 编写java类实现Filter接口，并实现doFilter方法。
+		2 在web.xml文件中对filter类进行注册，并设置所拦截的资源。
+	<使用过程/>
+
+	<!-- 字符集编码过滤器配置 -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>filter.CharacterEncodingFilter</filter-class>
+
+		<init-param>
+			<param-name>charset</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+
+	</filter>
+
+
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+
+	</filter-mapping>
+
+	<!-- 用户登录安全控制过滤器配置 -->
+	<filter>
+		<filter-name>sessionFilter</filter-name>
+		<filter-class>filter.SessionFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sessionFilter</filter-name>
+		<url-pattern>/message.jsp</url-pattern>
+	</filter-mapping>
+
+<过滤器/>
+
+<监听器>
+	<简介>
+		Servlet规范定义的一种特殊类；
+		用于监听ServletContext，HttpSession，ServletRequest等域对象的创建，销毁及其属性修改发生变化的事件；
+		监听器可以在事件发生前后进行一些必要的处理操作<简介/>
+
+	<应用>
+		统计在线人数和在线用户
+		应用启动时完成信息初始化工作
+		网站访问量的统计
+		与Spring结合
+		Web系统防止用户重复登陆
+	<应用/>
+
+	<使用方法>
+		实现接口与方法
+		在web.xml文件中对实现的监听器类进行注册
+	<使用方法/>
+	<监听器分类>
+		<域对象创建销毁监听器>
+			ServletContextListener
+			HttpSessionListener
+			ServletRequestListener
+		<域对象创建销毁监听器/>
+
+		<域对象属性创建、替换、消除事件监听器>
+			ServletContextAttributeListener
+			HttpSessionAttributeListener
+			ServletRequestAttributeListener
+		<域对象属性创建、替换、消除事件监听器/>
+
+		<绑定session某对象状态事件监听器>
+			HttpSessionBindingListener
+		<绑定session某对象状态事件监听器/>
+	<监听器分类/>
+
+<监听器/>

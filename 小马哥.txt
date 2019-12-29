@@ -1,0 +1,17 @@
+public class MyTest(){
+
+	public static void main(String[] args){
+	
+		String[] st = of();
+
+	}
+
+	public static <T> T[] of(T one,T... others){
+		return others;
+
+	}
+
+
+}
+
+@Override

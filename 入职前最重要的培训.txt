@@ -1,0 +1,7 @@
+职业关键技术
+    spring 
+    云项目 springboot cloud
+    持久层jpa 
+前端框架react，原生的方法其实就是对react的封装，可以写原生的代码。
+    
+    
