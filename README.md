@@ -1,2 +1,1 @@
-#is my student note
-# note
+# this is my note
