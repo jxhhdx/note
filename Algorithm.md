@@ -10,7 +10,7 @@
 
   后序遍历(左、右、节点)：G、B、H、A、D、F、E、C
 
- ![image](https://yqfile.alicdn.com/33afc89d147d689284682b959201d843ed0e458f.png) 
+ ![image](/public/image/二叉树.png) 
 
 #### 二叉查找树
 

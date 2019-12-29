@@ -10,7 +10,7 @@ git config --list # 查看配置
 
 # 工作流
 
-![](D:\shortcut\note\public\image\Git工作流.png)
+![](\public\image\Git工作流.png)
 
 ```shell
 git init  # 初始化版本库
