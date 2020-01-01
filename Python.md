@@ -17,7 +17,7 @@
 
 - print(r"le\n") ;r可以原样输出
 
- ![string索引图片](\public\image\python01.png) 
+ ![string索引图片](/public/image/python01.png) 
 
 ```python
 str = "abcdef"
