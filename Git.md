@@ -60,3 +60,6 @@ git push --force origin<!--强推-->
 git remote rm [origin2]
 ```
 
+# 参考资料
+
+![收藏](/public/image/git01.jpg)
