@@ -49,3 +49,9 @@
     componentDidUpdate 在组件完成更新后立即调用。在初始化时不会被调用。
     componentWillUnmount在组件从 DOM 中移除的时候立刻被调用。
 ```
+
+## 路由
+
++  http://react-guide.github.io/react-router-cn/docs/Introduction.html 
+
+
