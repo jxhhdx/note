@@ -41,5 +41,16 @@ B --> D[定损]
 
 ### 报案
 
-- 报案时使用接口报案，当发送xml文件时会根据报文中指定的处理接口发送接口。
-- InternalTestResource类中sendToClient()"T_CLM_AP30_INT_CHECK_XML"表处理校验逻辑，服务日志表为"T_CLM_AP30_INT_SERVER_LOG"或成功、失败都会存入此表。
+1. 校验报文使用到T_CLM_AP30_INT_CHECK_XML的数据来校验数据。
+2. 用报文中的代码找到T_CLM_AP30_INT_DEF和T_CLM_AP30_INT_SERVICE定义的客户端接口。
+3. 发送接口时会调用T_CLM_AP30_INT_URL中的url来获取请求地址。
+4. 发送之后会使用到T_CLM_AP30_INT_SERVER_LOG和T_CLM_AP30_INT_ASYN_LOG。
+5. T_CLM_AP30_ORG(机构表)、T_CLM_AP30_INSURED_ORG(机构信息表)、T_CLM_AP30_ACCIDENT(案件表)、T_CLM_AP30_USER(用户表)
+
+### 查勘
+
+1. 
+
+### 定损
+
+1. 
