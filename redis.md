@@ -46,11 +46,11 @@ make PREFIX=/usr/local/redis install
 # 编译完成之后/usr/local/ 目录之下出现redis文件夹 将redis-3.0.7文件夹之下的redis.conf拷贝到redis之下即可
 ./redis-# 运行bin路径之下输入
 vim /usr/redis.conf  # 修改daemonize no 改为 yes
-/bin/redis-server ./redis.conf
+/bin/redis-server ./redis.conf  # 后台运行redis
 ps -ef | grep -i redis
 kill -9 4684  
-./bin/redis-cli shutdown
-./bin/redis-cli
+./bin/redis-cli shutdown  # 关闭redis
+./bin/redis-cli  # 进入redis
 ping  # PONG
 set name imooc  #OK
 get name  # "imooc"
