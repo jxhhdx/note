@@ -104,11 +104,12 @@ TAB (    )。
 
 ### Tuple
 
-- 性质与List类似，就是tuple元素不可变。
+- 元组性质与List列表类似，就是tuple元素不可变。
+-  tup1 = ('physics', 'chemistry', 1997, 2000) 
 
 ### Set
 
-- set大括号`{}`或者`set()`函数创建集合，创建一个空集必须使用`set()`而不是`{}`,因为`{}`是用来创建一个空字典。
+- set集合大括号`{}`或者`set()`函数创建集合，创建一个空集必须使用`set()`而不是`{}`,因为`{}`是用来创建一个空字典。
 
  > ```
  > parame = {value01,value02,...}
@@ -147,3 +148,178 @@ print(a ^ b)     # a 和 b 中不同时存在的元素 {'l', 'r', 'z', 'm', 'b', 'd'}
   > dict_keys(['one',.....])
   >
   > dict_vlaues(['hello',....])
+
+## 条件判断语句
+
+```python
+if bool1:
+    statement_block_1
+elif bool2:
+    statement_block_2
+else:
+    statement_block_3
+```
+
+## 循环语句
+
+```python
+while bool1:  
+   content0
+else:  # while、for还可以带上else使用
+   content00
+for w in isList
+   content1
+for i in range(5)
+   content2
+```
+
+## 函数
+
+```python
+def function(L=[])  # 可以在参数里面定义值
+    return "hello";
+```
+
+## 迭代器和生成器
+
+- 迭代器
+
+```python
+# 迭代器的两个方法 iter() next()
+list = [1, 2, 3, 4]
+it = iter(list)
+
+next(it)  # 1
+next(it)  # 2 
+next(it)  # 3
+next(it)  # 4 
+```
+
+- 生成器
+
+## 异常
+
+### try-except
+
+![img](/public/image/python03.png) 
+
+### try-except-else
+
+![img](/public/image/python04.png) 
+
+### try-except-else-finally
+
+![img](/public/image/python05.png) 
+
+### raise
+
+```python
+x = 10 
+if x > 5:    
+    raise Exception('x 不能大于 5。x 的值为:{}'.format(x)) 
+```
+
+### 自定义异常
+
+```python
+class MyError(Exception):
+    def __init__(self, value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
+   
+```
+
+## 输入输出
+
+```python
+for x in range(1, 11):
+    print('{0:2d} {2:4d} {1:4d}'.format(x, x * x, x * x * x))  # {显示位置:占位空间}
+    
+print('{}或者{}'.format('帅','超帅'))  # 帅或者超帅
+print('{1}或者{0}'.format('帅','超帅'))  # 超帅或者帅
+print('{a2}或者{a1}'.format(a1='帅',a2='超帅'))  # 超帅或者帅
+
+print('1'.zfill(2))  # 001 
+print(repr('1').rjust(5))  #占五个空格,repr中的元素尽量向右挤
+```
+
+## 文件
+
+>  https://www.runoob.com/python3/python3-file-methods.html 
+
+## 面向对象编程
+
+- `self`等价于`this`、`people`等价于`super`
+
+>  https://www.runoob.com/python3/python3-class.html 
+
+```python
+class MyClass:
+    """一个简单的类实例"""
+    i = 12345
+    def f(self):
+        return 'hello world'
+ 
+# 实例化类
+x = MyClass()
+ 
+# 访问类的属性和方法
+print("MyClass 类的属性 i 为：", x.i)
+print("MyClass 类的方法 f 输出为：", x.f())
+```
+
+### 构造方法
+
+- 使用`__init__`来定义
+
+```python
+def __init___(self):
+    self.data = []
+```
+
+### private 
+
+- `__属性`等价于`private 属性`
+- 可以用来修饰方法与属性
+
+### 继承
+
+- python继承是多继承的
+- student类继承people(class student(people))
+
+### 重写
+
+```python
+class Parent:        # 定义父类
+   def myMethod(self):
+      print ('调用父类方法')
+ 
+class Child(Parent): # 定义子类
+   def myMethod(self):
+      print ('调用子类方法')
+ 
+c = Child()          # 子类实例
+c.myMethod()         # 子类调用重写方法
+super(Child,c).myMethod() #用子类对象调用父类已被覆盖的方法
+```
+
+### 类的专有方法
+
+```python
+__init__ # 构造函数，在生成对象时调用
+__del__ # 析构函数，释放对象时使用
+__repr__ # 打印，转换
+__setitem__ # 按照索引赋值
+__getitem__ # 按照索引获取值
+__len__ # 获得长度
+__cmp__ # 比较运算
+__call__ # 函数调用
+__add__ # 加运算
+__sub__ # 减运算
+__mul__ # 乘运算
+__truediv__ # 除运算
+__mod__ # 求余运算
+__pow__ # 乘方
+```
+
