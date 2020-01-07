@@ -8,7 +8,7 @@
 
   中序遍历(左、节点、右)：G、B、H、A、C、D、E、F
 
-  后序遍历(左、右、节点)：G、B、H、A、D、F、E、C
+  后序遍历(左、右、节点)：G、H、B、A、D、F、E、C
 
  ![image](/public/image/二叉树.png) 
 
