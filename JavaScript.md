@@ -16,31 +16,31 @@
 	<类型强制转换>
 		parseInt() parseFloat() Number() Boolean()
 	<类型强制转换/>
-
+	
 	<字符函数>
 		.substr([6位置],[4长度]) .substring([位置],[位置])
 		.charAt() .indexOf(1,4)(2到5之和) .split(",") .concat()
 		.replace()
 	<字符函数/>
-
+	
 	<数字函数>
 		Math.round(n[四舍五入])	n.toFixed(0[舍到小数点后0位])
 		Math.max .min.abs
 	<数字函数/>
-
+	
 	<日期函数>
 		new Date();getDate()==19 getMonth+1 getFullYear() getHours()
 		getMinutes() getSeconds() getTime()
 	<日期函数/>
-
+	
 	<表单的设置>
 		document.getElementById()
 			.getElementsByName()
 			.getElementsByTagName()
 			.getElementsByClassName()
-
+	
 	<表单的设置/>
-
+	
 	<事件>
 		onchange HTML元素发生改变
 		onclick 用户点击
@@ -86,7 +86,7 @@ javaScript控制浏览器BOM
 
 <事件>
 
-<鼠标事件>onlick ondblclick onmouseover onmouseout onmousedown<鼠标事件>
+<鼠标事件>onclick ondblclick onmouseover onmouseout onmousedown<鼠标事件>
 
 <键盘事件>onkeydown onkeyup keypress<键盘事件>
 
