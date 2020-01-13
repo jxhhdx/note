@@ -2,7 +2,7 @@
 
 
 
-## 标准数据类型
+## 1.标准数据类型
 
 - python有六种数据类型：分别是Number（数字）、String（字符串）、List（列表）、Tuple（元组）、Set（集合）、Dictionary（字典）。
 - Number、String、Tuple不可变。List、Set、Dictionary可变。
@@ -149,7 +149,7 @@ print(a ^ b)     # a 和 b 中不同时存在的元素 {'l', 'r', 'z', 'm', 'b', 'd'}
   >
   > dict_vlaues(['hello',....])
 
-## 条件判断语句
+## 2.条件判断语句
 
 ```python
 if bool1:
@@ -160,7 +160,7 @@ else:
     statement_block_3
 ```
 
-## 循环语句
+## 3.循环语句
 
 ```python
 while bool1:  
@@ -173,14 +173,14 @@ for i in range(5)
    content2
 ```
 
-## 函数
+## 4.函数
 
 ```python
 def function(L=[])  # 可以在参数里面定义值
     return "hello";
 ```
 
-## 迭代器和生成器
+## 5.迭代器和生成器
 
 - 迭代器
 
@@ -197,7 +197,7 @@ next(it)  # 4
 
 - 生成器
 
-## 异常
+## 6.异常
 
 ### try-except
 
@@ -230,7 +230,7 @@ class MyError(Exception):
    
 ```
 
-## 输入输出
+## 7.输入输出
 
 ```python
 for x in range(1, 11):
@@ -244,11 +244,11 @@ print('1'.zfill(2))  # 001
 print(repr('1').rjust(5))  #占五个空格,repr中的元素尽量向右挤
 ```
 
-## 文件
+## 8.文件
 
 >  https://www.runoob.com/python3/python3-file-methods.html 
 
-## 面向对象编程
+## 9.面向对象编程
 
 - `self`等价于`this`、`people`等价于`super`
 
@@ -269,7 +269,7 @@ print("MyClass 类的属性 i 为：", x.i)
 print("MyClass 类的方法 f 输出为：", x.f())
 ```
 
-### 构造方法
+###  构造方法
 
 - 使用`__init__`来定义
 
@@ -322,4 +322,15 @@ __truediv__ # 除运算
 __mod__ # 求余运算
 __pow__ # 乘方
 ```
+
+## NumPy
+
+- NumPy是Python的扩展类库，他能够支持大量的维度数组与矩阵运算，也能针对数组运算提供大量的数学函数库
+- 他通常与SciPy和Matplotlib(绘图库)一起使用
+
+### 安装
+
++ 见菜鸟教程
+
+>  https://www.runoob.com/numpy/numpy-install.html 
 
