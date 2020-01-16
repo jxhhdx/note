@@ -29,7 +29,7 @@
 + **复查变化:**在提交之间进行检查是一个谨慎也必要的行为，除非你保证一定没有错误，`status`操作就是用来查看待变更的列表。[查看历史](https://www.runoob.com/svn/svn-show-history.html)
 + **修改错误:**当你curd副本之后，后悔了发现自己写错了，就可以进行`revert`操作。[回退教程](https://www.runoob.com/svn/svn-revert.html)
 + **解决冲突:**合并的时候同一个文件同一行被修改了，就会有冲突，你就要执行`Merge`来处理冲突。[解决冲突](https://www.runoob.com/svn/svn-conflict.html)
-+ **提交更改:**就是一个开心的过程，做业(daima)写完要上交了,执行`commit`操作。[提交教程](https://www.runoob.com/svn/svn-commit.html)
++ **提交更改:**就是一个开心的过程，作业(daima)写完要上交了,执行`commit`操作。[提交教程](https://www.runoob.com/svn/svn-commit.html)
 
 ### 3.1 分支和标签
 
@@ -38,3 +38,4 @@
 ### 4. TortoiseSVN 使用教程
 
 + **[使用教程](https://www.runoob.com/svn/tortoisesvn-intro.html)**
++ 

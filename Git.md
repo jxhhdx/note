@@ -1,4 +1,7 @@
 # GIt安装
+
+- [详细安装教程](https://www.runoob.com/git/git-install-setup.html)
+
 ```shell
 # https://git-scm.com/download/win
 # https://www.sourcetreeapp.com/download-archives
@@ -10,7 +13,16 @@ git config --list # 查看配置
 
 # 工作流
 
-![](\public\image\Git工作流.png)
+一般工作流程如下：
+
+- 克隆 Git 资源作为工作目录。
+- 在克隆的资源上添加或修改文件。
+- 如果其他人修改了，你可以更新资源。
+- 在提交前查看修改。
+- 提交修改。
+- 在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。
+
+![Git工作流](\public\image\Git工作流.png)
 
 ```shell
 git init  # 初始化版本库
@@ -49,6 +61,8 @@ git push -u origin master
 
 # 远程仓库
 
+
+
 ```shell
 git remote add [origin] [https://github.com/gitlnla/gxx.git]
 git remote [-v]<!--查看当前配置有哪些仓库-->
@@ -59,6 +73,10 @@ git push <远程主机名> <本地分支名>:<远程分支名>
 git push --force origin<!--强推-->
 git remote rm [origin2]
 ```
+
+# [Git 远程仓库(Github)](https://www.runoob.com/git/git-remote-repo.html)
+
+# [Git 服务器搭建](https://www.runoob.com/git/git-server.html)
 
 # 参考资料
 
