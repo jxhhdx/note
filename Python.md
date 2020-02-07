@@ -1,91 +1,91 @@
-# python±Ê¼Ç
+# pythonç¬”è®°
 
 
 
-## 1.±ê×¼Êý¾ÝÀàÐÍ
+## 1.æ ‡å‡†æ•°æ®ç±»åž‹
 
-- pythonÓÐÁùÖÖÊý¾ÝÀàÐÍ£º·Ö±ðÊÇNumber£¨Êý×Ö£©¡¢String£¨×Ö·û´®£©¡¢List£¨ÁÐ±í£©¡¢Tuple£¨Ôª×é£©¡¢Set£¨¼¯ºÏ£©¡¢Dictionary£¨×Öµä£©¡£
-- Number¡¢String¡¢Tuple²»¿É±ä¡£List¡¢Set¡¢Dictionary¿É±ä¡£
+- pythonæœ‰å…­ç§æ•°æ®ç±»åž‹ï¼šåˆ†åˆ«æ˜¯Numberï¼ˆæ•°å­—ï¼‰ã€Stringï¼ˆå­—ç¬¦ä¸²ï¼‰ã€Listï¼ˆåˆ—è¡¨ï¼‰ã€Tupleï¼ˆå…ƒç»„ï¼‰ã€Setï¼ˆé›†åˆï¼‰ã€Dictionaryï¼ˆå­—å…¸ï¼‰ã€‚
+- Numberã€Stringã€Tupleä¸å¯å˜ã€‚Listã€Setã€Dictionaryå¯å˜ã€‚
 
 ### Number
 
-- ÓÐint¡¢float¡¢bool¡¢complex(¸´Êý(1+4j))ÀàÐÍ
-- ÀàÐÍ²âÊÔtype()¡¢isinstance(a,int)
+- æœ‰intã€floatã€boolã€complex(å¤æ•°(1+4j))ç±»åž‹
+- ç±»åž‹æµ‹è¯•type()ã€isinstance(a,int)
 - 6 // 9 = 0 , 2 ** 3 = 2 x 2 x 2 = 8
 
 ### String
 
-- print(r"le\n") ;r¿ÉÒÔÔ­ÑùÊä³ö
+- print(r"le\n") ;rå¯ä»¥åŽŸæ ·è¾“å‡º
 
- ![stringË÷ÒýÍ¼Æ¬](/public/image/python01.png) 
+ ![stringç´¢å¼•å›¾ç‰‡](/public/image/python01.png) 
 
 ```python
 str = "abcdef"
-print(str[0:-1])  # µÚÒ»¸ö¼°-1Ö®Ç°Ç°
-print(str[2:5])  # µÚÈý¸ö¼°Îå¸öÖ®ºó
-print(str[2:])  # µÚÈý¸ö¼°Ö®ºó
-print(str * 2)  # Êä³öÁ½±éstr
+print(str[0:-1])  # ç¬¬ä¸€ä¸ªåŠ-1ä¹‹å‰å‰
+print(str[2:5])  # ç¬¬ä¸‰ä¸ªåŠäº”ä¸ªä¹‹åŽ
+print(str[2:])  # ç¬¬ä¸‰ä¸ªåŠä¹‹åŽ
+print(str * 2)  # è¾“å‡ºä¸¤éstr
 ```
 
-#### StringÔËËã·û
+#### Stringè¿ç®—ç¬¦
 
 ```python
-# ¼ÙÉèa="hello world"
-in     # 'h' in a½á¹ûÎªTrue
-not in # ÀàÍ¬ÉÏ
-print(r"\n")      # r/RÔ­ÑùÊä³öÈç¹ûÃ»ÓÐÈç`\n`Õâ¸öÑùµÄ×ªÒå×Ö·û»áÉúÐ§
+# å‡è®¾a="hello world"
+in     # 'h' in aç»“æžœä¸ºTrue
+not in # ç±»åŒä¸Š
+print(r"\n")      # r/RåŽŸæ ·è¾“å‡ºå¦‚æžœæ²¡æœ‰å¦‚`\n`è¿™ä¸ªæ ·çš„è½¬ä¹‰å­—ç¬¦ä¼šç”Ÿæ•ˆ
 ```
 
-#### ×Ö·û´®¸ñÊ½»¯
+#### å­—ç¬¦ä¸²æ ¼å¼åŒ–
 
 ```python
-print ("ÎÒ½Ð %s ½ñÄê %d Ëê!" % ('Ð¡Ã÷', 10))
-# ÎÒ½Ð Ð¡Ã÷ ½ñÄê 10 Ëê!
+print ("æˆ‘å« %s ä»Šå¹´ %d å²!" % ('å°æ˜Ž', 10))
+# æˆ‘å« å°æ˜Ž ä»Šå¹´ 10 å²!
 ```
 
-| ·û  ºÅ | ÃèÊö                                 |
+| ç¬¦  å· | æè¿°                                 |
 | :----- | :----------------------------------- |
-| %c     | ¸ñÊ½»¯×Ö·û¼°ÆäASCIIÂë                |
-| %s     | ¸ñÊ½»¯×Ö·û´®                         |
-| %d     | ¸ñÊ½»¯ÕûÊý                           |
-| %u     | ¸ñÊ½»¯ÎÞ·ûºÅÕûÐÍ                     |
-| %o     | ¸ñÊ½»¯ÎÞ·ûºÅ°Ë½øÖÆÊý                 |
-| %x     | ¸ñÊ½»¯ÎÞ·ûºÅÊ®Áù½øÖÆÊý               |
-| %X     | ¸ñÊ½»¯ÎÞ·ûºÅÊ®Áù½øÖÆÊý£¨´óÐ´£©       |
-| %f     | ¸ñÊ½»¯¸¡µãÊý×Ö£¬¿ÉÖ¸¶¨Ð¡ÊýµãºóµÄ¾«¶È |
-| %e     | ÓÃ¿ÆÑ§¼ÆÊý·¨¸ñÊ½»¯¸¡µãÊý             |
-| %E     | ×÷ÓÃÍ¬%e£¬ÓÃ¿ÆÑ§¼ÆÊý·¨¸ñÊ½»¯¸¡µãÊý   |
-| %g     | %fºÍ%eµÄ¼òÐ´                         |
-| %G     | %f ºÍ %E µÄ¼òÐ´                      |
-| %p     | ÓÃÊ®Áù½øÖÆÊý¸ñÊ½»¯±äÁ¿µÄµØÖ·         |
+| %c     | æ ¼å¼åŒ–å­—ç¬¦åŠå…¶ASCIIç                 |
+| %s     | æ ¼å¼åŒ–å­—ç¬¦ä¸²                         |
+| %d     | æ ¼å¼åŒ–æ•´æ•°                           |
+| %u     | æ ¼å¼åŒ–æ— ç¬¦å·æ•´åž‹                     |
+| %o     | æ ¼å¼åŒ–æ— ç¬¦å·å…«è¿›åˆ¶æ•°                 |
+| %x     | æ ¼å¼åŒ–æ— ç¬¦å·åå…­è¿›åˆ¶æ•°               |
+| %X     | æ ¼å¼åŒ–æ— ç¬¦å·åå…­è¿›åˆ¶æ•°ï¼ˆå¤§å†™ï¼‰       |
+| %f     | æ ¼å¼åŒ–æµ®ç‚¹æ•°å­—ï¼Œå¯æŒ‡å®šå°æ•°ç‚¹åŽçš„ç²¾åº¦ |
+| %e     | ç”¨ç§‘å­¦è®¡æ•°æ³•æ ¼å¼åŒ–æµ®ç‚¹æ•°             |
+| %E     | ä½œç”¨åŒ%eï¼Œç”¨ç§‘å­¦è®¡æ•°æ³•æ ¼å¼åŒ–æµ®ç‚¹æ•°   |
+| %g     | %få’Œ%eçš„ç®€å†™                         |
+| %G     | %f å’Œ %E çš„ç®€å†™                      |
+| %p     | ç”¨åå…­è¿›åˆ¶æ•°æ ¼å¼åŒ–å˜é‡çš„åœ°å€         |
 
-¸¨Öú¹¦ÄÜ
+è¾…åŠ©åŠŸèƒ½
 
-| ·ûºÅ  | ¹¦ÄÜ                                                         |
+| ç¬¦å·  | åŠŸèƒ½                                                         |
 | :---- | :----------------------------------------------------------- |
-| *     | ¶¨Òå¿í¶È»òÕßÐ¡Êýµã¾«¶È                                       |
-| -     | ÓÃ×ö×ó¶ÔÆë                                                   |
-| +     | ÔÚÕýÊýÇ°ÃæÏÔÊ¾¼ÓºÅ( + )                                      |
-| <sp>  | ÔÚÕýÊýÇ°ÃæÏÔÊ¾¿Õ¸ñ                                           |
-| #     | ÔÚ°Ë½øÖÆÊýÇ°ÃæÏÔÊ¾Áã('0')£¬ÔÚÊ®Áù½øÖÆÇ°ÃæÏÔÊ¾'0x'»òÕß'0X'(È¡¾öÓÚÓÃµÄÊÇ'x'»¹ÊÇ'X') |
-| 0     | ÏÔÊ¾µÄÊý×ÖÇ°ÃæÌî³ä'0'¶ø²»ÊÇÄ¬ÈÏµÄ¿Õ¸ñ                        |
-| %     | '%%'Êä³öÒ»¸öµ¥Ò»µÄ'%'                                        |
-| (var) | Ó³Éä±äÁ¿(×Öµä²ÎÊý)                                           |
-| m.n.  | m ÊÇÏÔÊ¾µÄ×îÐ¡×Ü¿í¶È,n ÊÇÐ¡ÊýµãºóµÄÎ»Êý(Èç¹û¿ÉÓÃµÄ»°)        |
+| *     | å®šä¹‰å®½åº¦æˆ–è€…å°æ•°ç‚¹ç²¾åº¦                                       |
+| -     | ç”¨åšå·¦å¯¹é½                                                   |
+| +     | åœ¨æ­£æ•°å‰é¢æ˜¾ç¤ºåŠ å·( + )                                      |
+| <sp>  | åœ¨æ­£æ•°å‰é¢æ˜¾ç¤ºç©ºæ ¼                                           |
+| #     | åœ¨å…«è¿›åˆ¶æ•°å‰é¢æ˜¾ç¤ºé›¶('0')ï¼Œåœ¨åå…­è¿›åˆ¶å‰é¢æ˜¾ç¤º'0x'æˆ–è€…'0X'(å–å†³äºŽç”¨çš„æ˜¯'x'è¿˜æ˜¯'X') |
+| 0     | æ˜¾ç¤ºçš„æ•°å­—å‰é¢å¡«å……'0'è€Œä¸æ˜¯é»˜è®¤çš„ç©ºæ ¼                        |
+| %     | '%%'è¾“å‡ºä¸€ä¸ªå•ä¸€çš„'%'                                        |
+| (var) | æ˜ å°„å˜é‡(å­—å…¸å‚æ•°)                                           |
+| m.n.  | m æ˜¯æ˜¾ç¤ºçš„æœ€å°æ€»å®½åº¦,n æ˜¯å°æ•°ç‚¹åŽçš„ä½æ•°(å¦‚æžœå¯ç”¨çš„è¯)        |
 
 ```python
-para_str = """ÕâÊÇÒ»¸ö¶àÐÐ×Ö·û´®µÄÊµÀý
-¶àÐÐ×Ö·û´®¿ÉÒÔÊ¹ÓÃÖÆ±í·û
-TAB ( \t )¡£
-Ò²¿ÉÒÔÊ¹ÓÃ»»ÐÐ·û [ \n ]¡£
+para_str = """è¿™æ˜¯ä¸€ä¸ªå¤šè¡Œå­—ç¬¦ä¸²çš„å®žä¾‹
+å¤šè¡Œå­—ç¬¦ä¸²å¯ä»¥ä½¿ç”¨åˆ¶è¡¨ç¬¦
+TAB ( \t )ã€‚
+ä¹Ÿå¯ä»¥ä½¿ç”¨æ¢è¡Œç¬¦ [ \n ]ã€‚
 """
 print (para_str)
 """
-ÕâÊÇÒ»¸ö¶àÐÐ×Ö·û´®µÄÊµÀý
-¶àÐÐ×Ö·û´®¿ÉÒÔÊ¹ÓÃÖÆ±í·û
-TAB (    )¡£
-Ò²¿ÉÒÔÊ¹ÓÃ»»ÐÐ·û [ 
- ]¡£
+è¿™æ˜¯ä¸€ä¸ªå¤šè¡Œå­—ç¬¦ä¸²çš„å®žä¾‹
+å¤šè¡Œå­—ç¬¦ä¸²å¯ä»¥ä½¿ç”¨åˆ¶è¡¨ç¬¦
+TAB (    )ã€‚
+ä¹Ÿå¯ä»¥ä½¿ç”¨æ¢è¡Œç¬¦ [ 
+ ]ã€‚
 """
 ```
 
@@ -93,63 +93,63 @@ TAB (    )¡£
 
 ### List
 
-- ListÐ´ÔÚ[]Ö®¼ä£¬ÔªËØÓÃ¶ººÅ¸ô¿ª¡£ListÊÇ¿É±äµÄ¡£ListÖÐµÄÔªËØ¿ÉÒÔÊÇ²»Í¬µÄ
+- Listå†™åœ¨[]ä¹‹é—´ï¼Œå…ƒç´ ç”¨é€—å·éš”å¼€ã€‚Listæ˜¯å¯å˜çš„ã€‚Listä¸­çš„å…ƒç´ å¯ä»¥æ˜¯ä¸åŒçš„
 
-- ÈçÏÂÍ¼ListÈý¸ö²ÎÊý´ú±íµÄÒâÒåÊÇ´ÓµÚÒ»¸öµ½µÚ¶þ¸öË÷ÒýÖ®¼ä¼ä¸ôµÚÈý¸öÎ»ÖÃµÄÊý¡£
+- å¦‚ä¸‹å›¾Listä¸‰ä¸ªå‚æ•°ä»£è¡¨çš„æ„ä¹‰æ˜¯ä»Žç¬¬ä¸€ä¸ªåˆ°ç¬¬äºŒä¸ªç´¢å¼•ä¹‹é—´é—´éš”ç¬¬ä¸‰ä¸ªä½ç½®çš„æ•°ã€‚
 
-  ![ListÈý²ÎÊý](/public/image/python02.png)  
+  ![Listä¸‰å‚æ•°](/public/image/python02.png)  
 
-- list[1,2,3,4,5] Ê¹ÓÃlist[-1::-1]»á·´×ÅÊä³ö¡£
+- list[1,2,3,4,5] ä½¿ç”¨list[-1::-1]ä¼šåç€è¾“å‡ºã€‚
 
 
 ### Tuple
 
-- Ôª×éÐÔÖÊÓëListÁÐ±íÀàËÆ£¬¾ÍÊÇtupleÔªËØ²»¿É±ä¡£
+- å…ƒç»„æ€§è´¨ä¸ŽListåˆ—è¡¨ç±»ä¼¼ï¼Œå°±æ˜¯tupleå…ƒç´ ä¸å¯å˜ã€‚
 -  tup1 = ('physics', 'chemistry', 1997, 2000) 
 
 ### Set
 
-- set¼¯ºÏ´óÀ¨ºÅ`{}`»òÕß`set()`º¯Êý´´½¨¼¯ºÏ£¬´´½¨Ò»¸ö¿Õ¼¯±ØÐëÊ¹ÓÃ`set()`¶ø²»ÊÇ`{}`,ÒòÎª`{}`ÊÇÓÃÀ´´´½¨Ò»¸ö¿Õ×Öµä¡£
+- seté›†åˆå¤§æ‹¬å·`{}`æˆ–è€…`set()`å‡½æ•°åˆ›å»ºé›†åˆï¼Œåˆ›å»ºä¸€ä¸ªç©ºé›†å¿…é¡»ä½¿ç”¨`set()`è€Œä¸æ˜¯`{}`,å› ä¸º`{}`æ˜¯ç”¨æ¥åˆ›å»ºä¸€ä¸ªç©ºå­—å…¸ã€‚
 
  > ```
  > parame = {value01,value02,...}
- > »òÕß
+ > æˆ–è€…
  > set(value)
  > ```
 
-- set²»»áÓÐÖØ¸´£¬ÒòÎªÖØ¸´µÄ¶«Î÷¶¼»á±»ËüÈ¥µô
+- setä¸ä¼šæœ‰é‡å¤ï¼Œå› ä¸ºé‡å¤çš„ä¸œè¥¿éƒ½ä¼šè¢«å®ƒåŽ»æŽ‰
 
 ```python
 student = {'Tom', 'Jim', 'Mary', 'Tom', 'Jack', 'Rose'}
-print(student)   # Êä³ö¼¯ºÏ£¬ÖØ¸´µÄÔªËØ±»×Ô¶¯È¥µô {'Rose', 'Jack', 'Tom', 'Jim', 'Mary'}
-# ³ÉÔ±²âÊÔ out:Rose ÔÚ¼¯ºÏÖÐ
+print(student)   # è¾“å‡ºé›†åˆï¼Œé‡å¤çš„å…ƒç´ è¢«è‡ªåŠ¨åŽ»æŽ‰ {'Rose', 'Jack', 'Tom', 'Jim', 'Mary'}
+# æˆå‘˜æµ‹è¯• out:Rose åœ¨é›†åˆä¸­
 if 'Rose' in student :
-    print('Rose ÔÚ¼¯ºÏÖÐ')
+    print('Rose åœ¨é›†åˆä¸­')
 else :
-    print('Rose ²»ÔÚ¼¯ºÏÖÐ')
+    print('Rose ä¸åœ¨é›†åˆä¸­')
  
-# set¿ÉÒÔ½øÐÐ¼¯ºÏÔËËã
+# setå¯ä»¥è¿›è¡Œé›†åˆè¿ç®—
 a = set('abracadabra')
 b = set('alacazam')
 print(a)         # {'b', 'a', 'c', 'r', 'd'}
-print(a - b)     # a ºÍ b µÄ²î¼¯ {'b', 'd', 'r'}
-print(a | b)     # a ºÍ b µÄ²¢¼¯ {'l', 'r', 'a', 'c', 'z', 'm', 'b', 'd'}
-print(a & b)     # a ºÍ b  {'a', 'c'}
-print(a ^ b)     # a ºÍ b ÖÐ²»Í¬Ê±´æÔÚµÄÔªËØ {'l', 'r', 'z', 'm', 'b', 'd'}
+print(a - b)     # a å’Œ b çš„å·®é›† {'b', 'd', 'r'}
+print(a | b)     # a å’Œ b çš„å¹¶é›† {'l', 'r', 'a', 'c', 'z', 'm', 'b', 'd'}
+print(a & b)     # a å’Œ b  {'a', 'c'}
+print(a ^ b)     # a å’Œ b ä¸­ä¸åŒæ—¶å­˜åœ¨çš„å…ƒç´  {'l', 'r', 'z', 'm', 'b', 'd'}
 ```
 
 ### Dictionary
 
-+ ×ÖµäÀàËÆÓÚjavaÖÐµÄMap¼¯ºÏ£¬Æä´æ´¢ÐÎÊ½ºÍjsonµÄ¸ñÊ½ÀàËÆ£¬¿ÉÒÔÊ¹ÓÃkey-valueµÄÐÎÊ½·ÃÎÊ¡£
-+ dict['key'] = value`»ò`dict = { 'key' : 'value' , 'key1' : 'value1'}
++ å­—å…¸ç±»ä¼¼äºŽjavaä¸­çš„Mapé›†åˆï¼Œå…¶å­˜å‚¨å½¢å¼å’Œjsonçš„æ ¼å¼ç±»ä¼¼ï¼Œå¯ä»¥ä½¿ç”¨key-valueçš„å½¢å¼è®¿é—®ã€‚
++ dict['key'] = value`æˆ–`dict = { 'key' : 'value' , 'key1' : 'value1'}
 
-- ³£ÓÃµÄº¯Êýkeys()¡¢values()
+- å¸¸ç”¨çš„å‡½æ•°keys()ã€values()
 
   > dict_keys(['one',.....])
   >
   > dict_vlaues(['hello',....])
 
-## 2.Ìõ¼þÅÐ¶ÏÓï¾ä
+## 2.æ¡ä»¶åˆ¤æ–­è¯­å¥
 
 ```python
 if bool1:
@@ -160,12 +160,12 @@ else:
     statement_block_3
 ```
 
-## 3.Ñ­»·Óï¾ä
+## 3.å¾ªçŽ¯è¯­å¥
 
 ```python
 while bool1:  
    content0
-else:  # while¡¢for»¹¿ÉÒÔ´øÉÏelseÊ¹ÓÃ
+else:  # whileã€forè¿˜å¯ä»¥å¸¦ä¸Šelseä½¿ç”¨
    content00
 for w in isList
    content1
@@ -173,19 +173,19 @@ for i in range(5)
    content2
 ```
 
-## 4.º¯Êý
+## 4.å‡½æ•°
 
 ```python
-def function(L=[])  # ¿ÉÒÔÔÚ²ÎÊýÀïÃæ¶¨ÒåÖµ
+def function(L=[])  # å¯ä»¥åœ¨å‚æ•°é‡Œé¢å®šä¹‰å€¼
     return "hello";
 ```
 
-## 5.µü´úÆ÷ºÍÉú³ÉÆ÷
+## 5.è¿­ä»£å™¨å’Œç”Ÿæˆå™¨
 
-- µü´úÆ÷
+- è¿­ä»£å™¨
 
 ```python
-# µü´úÆ÷µÄÁ½¸ö·½·¨ iter() next()
+# è¿­ä»£å™¨çš„ä¸¤ä¸ªæ–¹æ³• iter() next()
 list = [1, 2, 3, 4]
 it = iter(list)
 
@@ -195,9 +195,9 @@ next(it)  # 3
 next(it)  # 4 
 ```
 
-- Éú³ÉÆ÷
+- ç”Ÿæˆå™¨
 
-## 6.Òì³£
+## 6.å¼‚å¸¸
 
 ### try-except
 
@@ -216,10 +216,10 @@ next(it)  # 4
 ```python
 x = 10 
 if x > 5:    
-    raise Exception('x ²»ÄÜ´óÓÚ 5¡£x µÄÖµÎª:{}'.format(x)) 
+    raise Exception('x ä¸èƒ½å¤§äºŽ 5ã€‚x çš„å€¼ä¸º:{}'.format(x)) 
 ```
 
-### ×Ô¶¨ÒåÒì³£
+### è‡ªå®šä¹‰å¼‚å¸¸
 
 ```python
 class MyError(Exception):
@@ -230,48 +230,48 @@ class MyError(Exception):
    
 ```
 
-## 7.ÊäÈëÊä³ö
+## 7.è¾“å…¥è¾“å‡º
 
 ```python
 for x in range(1, 11):
-    print('{0:2d} {2:4d} {1:4d}'.format(x, x * x, x * x * x))  # {ÏÔÊ¾Î»ÖÃ:Õ¼Î»¿Õ¼ä}
+    print('{0:2d} {2:4d} {1:4d}'.format(x, x * x, x * x * x))  # {æ˜¾ç¤ºä½ç½®:å ä½ç©ºé—´}
     
-print('{}»òÕß{}'.format('Ë§','³¬Ë§'))  # Ë§»òÕß³¬Ë§
-print('{1}»òÕß{0}'.format('Ë§','³¬Ë§'))  # ³¬Ë§»òÕßË§
-print('{a2}»òÕß{a1}'.format(a1='Ë§',a2='³¬Ë§'))  # ³¬Ë§»òÕßË§
+print('{}æˆ–è€…{}'.format('å¸…','è¶…å¸…'))  # å¸…æˆ–è€…è¶…å¸…
+print('{1}æˆ–è€…{0}'.format('å¸…','è¶…å¸…'))  # è¶…å¸…æˆ–è€…å¸…
+print('{a2}æˆ–è€…{a1}'.format(a1='å¸…',a2='è¶…å¸…'))  # è¶…å¸…æˆ–è€…å¸…
 
 print('1'.zfill(2))  # 001 
-print(repr('1').rjust(5))  #Õ¼Îå¸ö¿Õ¸ñ,reprÖÐµÄÔªËØ¾¡Á¿ÏòÓÒ¼·
+print(repr('1').rjust(5))  #å äº”ä¸ªç©ºæ ¼,reprä¸­çš„å…ƒç´ å°½é‡å‘å³æŒ¤
 ```
 
-## 8.ÎÄ¼þ
+## 8.æ–‡ä»¶
 
 >  https://www.runoob.com/python3/python3-file-methods.html 
 
-## 9.ÃæÏò¶ÔÏó±à³Ì
+## 9.é¢å‘å¯¹è±¡ç¼–ç¨‹
 
-- `self`µÈ¼ÛÓÚ`this`¡¢`people`µÈ¼ÛÓÚ`super`
+- `self`ç­‰ä»·äºŽ`this`ã€`people`ç­‰ä»·äºŽ`super`
 
 >  https://www.runoob.com/python3/python3-class.html 
 
 ```python
 class MyClass:
-    """Ò»¸ö¼òµ¥µÄÀàÊµÀý"""
+    """ä¸€ä¸ªç®€å•çš„ç±»å®žä¾‹"""
     i = 12345
     def f(self):
         return 'hello world'
  
-# ÊµÀý»¯Àà
+# å®žä¾‹åŒ–ç±»
 x = MyClass()
  
-# ·ÃÎÊÀàµÄÊôÐÔºÍ·½·¨
-print("MyClass ÀàµÄÊôÐÔ i Îª£º", x.i)
-print("MyClass ÀàµÄ·½·¨ f Êä³öÎª£º", x.f())
+# è®¿é—®ç±»çš„å±žæ€§å’Œæ–¹æ³•
+print("MyClass ç±»çš„å±žæ€§ i ä¸ºï¼š", x.i)
+print("MyClass ç±»çš„æ–¹æ³• f è¾“å‡ºä¸ºï¼š", x.f())
 ```
 
-###  ¹¹Ôì·½·¨
+###  æž„é€ æ–¹æ³•
 
-- Ê¹ÓÃ`__init__`À´¶¨Òå
+- ä½¿ç”¨`__init__`æ¥å®šä¹‰
 
 ```python
 def __init___(self):
@@ -280,56 +280,69 @@ def __init___(self):
 
 ### private 
 
-- `__ÊôÐÔ`µÈ¼ÛÓÚ`private ÊôÐÔ`
-- ¿ÉÒÔÓÃÀ´ÐÞÊÎ·½·¨ÓëÊôÐÔ
+- `__å±žæ€§`ç­‰ä»·äºŽ`private å±žæ€§`
+- å¯ä»¥ç”¨æ¥ä¿®é¥°æ–¹æ³•ä¸Žå±žæ€§
 
-### ¼Ì³Ð
+### ç»§æ‰¿
 
-- python¼Ì³ÐÊÇ¶à¼Ì³ÐµÄ
-- studentÀà¼Ì³Ðpeople(class student(people))
+- pythonç»§æ‰¿æ˜¯å¤šç»§æ‰¿çš„
+- studentç±»ç»§æ‰¿people(class student(people))
 
-### ÖØÐ´
+### é‡å†™
 
 ```python
-class Parent:        # ¶¨Òå¸¸Àà
+class Parent:        # å®šä¹‰çˆ¶ç±»
    def myMethod(self):
-      print ('µ÷ÓÃ¸¸Àà·½·¨')
+      print ('è°ƒç”¨çˆ¶ç±»æ–¹æ³•')
  
-class Child(Parent): # ¶¨Òå×ÓÀà
+class Child(Parent): # å®šä¹‰å­ç±»
    def myMethod(self):
-      print ('µ÷ÓÃ×ÓÀà·½·¨')
+      print ('è°ƒç”¨å­ç±»æ–¹æ³•')
  
-c = Child()          # ×ÓÀàÊµÀý
-c.myMethod()         # ×ÓÀàµ÷ÓÃÖØÐ´·½·¨
-super(Child,c).myMethod() #ÓÃ×ÓÀà¶ÔÏóµ÷ÓÃ¸¸ÀàÒÑ±»¸²¸ÇµÄ·½·¨
+c = Child()          # å­ç±»å®žä¾‹
+c.myMethod()         # å­ç±»è°ƒç”¨é‡å†™æ–¹æ³•
+super(Child,c).myMethod() #ç”¨å­ç±»å¯¹è±¡è°ƒç”¨çˆ¶ç±»å·²è¢«è¦†ç›–çš„æ–¹æ³•
 ```
 
-### ÀàµÄ×¨ÓÐ·½·¨
+### ç±»çš„ä¸“æœ‰æ–¹æ³•
 
 ```python
-__init__ # ¹¹Ôìº¯Êý£¬ÔÚÉú³É¶ÔÏóÊ±µ÷ÓÃ
-__del__ # Îö¹¹º¯Êý£¬ÊÍ·Å¶ÔÏóÊ±Ê¹ÓÃ
-__repr__ # ´òÓ¡£¬×ª»»
-__setitem__ # °´ÕÕË÷Òý¸³Öµ
-__getitem__ # °´ÕÕË÷Òý»ñÈ¡Öµ
-__len__ # »ñµÃ³¤¶È
-__cmp__ # ±È½ÏÔËËã
-__call__ # º¯Êýµ÷ÓÃ
-__add__ # ¼ÓÔËËã
-__sub__ # ¼õÔËËã
-__mul__ # ³ËÔËËã
-__truediv__ # ³ýÔËËã
-__mod__ # ÇóÓàÔËËã
-__pow__ # ³Ë·½
+__init__ # æž„é€ å‡½æ•°ï¼Œåœ¨ç”Ÿæˆå¯¹è±¡æ—¶è°ƒç”¨
+__del__ # æžæž„å‡½æ•°ï¼Œé‡Šæ”¾å¯¹è±¡æ—¶ä½¿ç”¨
+__repr__ # æ‰“å°ï¼Œè½¬æ¢
+__setitem__ # æŒ‰ç…§ç´¢å¼•èµ‹å€¼
+__getitem__ # æŒ‰ç…§ç´¢å¼•èŽ·å–å€¼
+__len__ # èŽ·å¾—é•¿åº¦
+__cmp__ # æ¯”è¾ƒè¿ç®—
+__call__ # å‡½æ•°è°ƒç”¨
+__add__ # åŠ è¿ç®—
+__sub__ # å‡è¿ç®—
+__mul__ # ä¹˜è¿ç®—
+__truediv__ # é™¤è¿ç®—
+__mod__ # æ±‚ä½™è¿ç®—
+__pow__ # ä¹˜æ–¹
 ```
 
 ## 10.NumPy
 
-- NumPyÊÇPythonµÄÀ©Õ¹Àà¿â£¬ËüÓÃÀ´½øÐÐ**¶àÎ¬µÄÊý×éÔËËã**ºÍ**¾ØÕóÔËËã**£¬²¢ÎªÔËËãÌá¹©ÊýÑ§º¯Êý¿â
+- NumPyæ˜¯Pythonçš„æ‰©å±•ç±»åº“ï¼Œå®ƒç”¨æ¥è¿›è¡Œ**å¤šç»´çš„æ•°ç»„è¿ç®—**å’Œ**çŸ©é˜µè¿ç®—**ï¼Œå¹¶ä¸ºè¿ç®—æä¾›æ•°å­¦å‡½æ•°åº“
 
-### °²×°
+## 11.å…¶å®ƒ
 
-+ ¼û²ËÄñ½Ì³Ì
+### lambda è¡¨è¾¾å¼
+
+- lambda è¡¨è¾¾å¼çš„å†™æ³•å¦‚ä¸‹ï¼š
+
+  ```python
+  lambda å‚æ•°1, å‚æ•°2, å‚æ•°N: å‡½æ•°å®žçŽ°
+  ```
+
+
+
+
+### å®‰è£…
+
++ è§èœé¸Ÿæ•™ç¨‹
 
 >  https://www.runoob.com/numpy/numpy-install.html 
 
