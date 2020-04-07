@@ -189,6 +189,58 @@ tar [-cvf //打包 -xvf //解包 -tf
 # ln -s /usr/software/nodejs/bin/npm   /usr/local/bin/                  // 设置命令软链接
 # ln -s /usr/software/nodejs/bin/node   /usr/local/bin/
 ```
+# mysql安装
+
+```shell
+wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+rpm -ivh mysql-community-release-el7-5.noarch.rpm
+yum update
+yum install mysql-server
+```
+
+```shell
+# 开放3306端口
+firewall-cmd --permanent --add-port=3306/tcp
+#重启防火墙(修改配置后要重启防火墙)
+firewall-cmd --reload
+```
+
+```shell
+sudo apt-get install nodejs # 安装nodejs
+sudo apt-get install npm    # 安装npm管理器
+npm install webpack -g      # 安装webpack
+npm install vue-cli -g      # 安装vue-cli脚手架
+npm install -g cnpm --registry=https://registry.npm.taobao.org # 使用淘宝镜像
+```
+
+```shell
+# 指定URL
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/li
+nux/gpu/tensorflow_gpu-2.0.0-cp36-cp36m-linux_x86_64.whl 
+# 使用指定的URL从pip管理器下载安装tensorflow
+pip3 install --upgrade $TF_BINARY_URL 
+```
+
+
+
+```json
+This is a test . <eos>
+[90, 13, 9, 689, 4, 2]
+INFO:tensorflow:Restoring parameters from ./seq2seq_ckpt-9000
+[  1  10   7   9  12 411 271   6   2]
+<sos> 这 是 一 个 测 试 。 <eos>
+```
+
+| 名称    | 类型 | 是否填 | 作用           |
+| ------- | ---- | ------ | -------------- |
+| From    | TEXT | 否     | 指定翻译的语言 |
+| To      | TEXT | 否     | 翻译的目标语言 |
+| src     | TEXT | 否     | 原文           |
+| dst     | TEXT | 是     | 译文           |
+| error   | TEXT | 是     | 错误代码       |
+| status  | TEXT | 是     | 状态           |
+| context | TEXT | 否     | 内容           |
+| other   | TEXT | 否     | 其它           |
 
 # 防火墙的配置
 

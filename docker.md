@@ -2,7 +2,7 @@
 
 >  https://www.runoob.com/docker/docker-install-ubuntu.html 
 
-## 使用
+## 基本使用
 
 ```shell
 # 查看镜像仓库
@@ -21,7 +21,12 @@ docker ps -a
 docker info 
 ```
 
+## Dockerfile
 
+```shell
+# 编译dockerfile文件
+docker build -t runoob/centos:6.7 .
+```
 
 ## 命令大全
 

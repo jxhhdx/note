@@ -346,3 +346,6 @@ __pow__ # 乘方
 
 >  https://www.runoob.com/numpy/numpy-install.html 
 
+## pip
+
+>  pip install -i https://pypi.tuna.tsinghua.edu.cn/simple requests 

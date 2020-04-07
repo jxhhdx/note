@@ -1,4 +1,4 @@
-# GIt安装
+# Git安装
 
 - [详细安装教程](https://www.runoob.com/git/git-install-setup.html)
 
