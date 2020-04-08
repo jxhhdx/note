@@ -23,8 +23,8 @@
 使用之前要进行[服务配置](https://www.runoob.com/svn/svn-start-mode.html )
 
 + **创建版本库:**`create`操作创建一个新的版本库，存放源码和修改日志。 [创建版本库教程]( https://www.runoob.com/svn/svn-create-repo.html )
-+ **检出:**`checkout`操作创建一个副本，是开发者私人的空间，写完以后可以提交的版本库。[检出教程](runoob.com/svn/svn-check-out.html)
-+ **更新:**`update`操作会与版本库进行同步。更新教程
++ **检出:**`checkout`操作创建一个副本，是开发者私人的空间，写完以后可以提交的版本库。[检出教程](https://www.runoob.com/svn/svn-check-out.html)
++ **更新:**`update`操作会与版本库进行同步。[更新教程](https://www.)
 + **执行变更:**创建副本之后你可以写代码，对副本进行curd的过程就是执行变更。
 + **复查变化:**在提交之间进行检查是一个谨慎也必要的行为，除非你保证一定没有错误，`status`操作就是用来查看待变更的列表。[查看历史](https://www.runoob.com/svn/svn-show-history.html)
 + **修改错误:**当你curd副本之后，后悔了发现自己写错了，就可以进行`revert`操作。[回退教程](https://www.runoob.com/svn/svn-revert.html)
