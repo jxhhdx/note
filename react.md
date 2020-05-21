@@ -54,4 +54,107 @@
 
 +  http://react-guide.github.io/react-router-cn/docs/Introduction.html 
 
+# 实践（React小游戏）
 
+ [井字棋小游戏]( https://zh-hans.reactjs.org/tutorial/tutorial.html )
+
+## 1、环境搭建
+
+```shell
+npx create-react-app my-app  # 搭建环境
+del *  # windows清除src下的目录时使用
+npm start  # 启动
+```
+
+## 2、项目开发
+
+### 开发基础（react之Component）
+
++ 如下是render方法返回组件
+
+```react
+class ShoppingList extends React.Component {
+  render() {
+    return (
+      <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+        </ul>
+      </div>
+    );
+  }
+}
+```
+
++ 等价于如下的代码：
+
+```react
+React.createElement("div", {
+  className: "shopping-list"
+},  React.createElement("h1", null, "Shopping List for ", props.name), 
+	React.createElement("ul", null, 
+		React.createElement("li", null, "Instagram"), 
+		React.createElement("li", null, "WhatsApp"), 
+		React.createElement("li", null, "Oculus")
+	)
+);
+```
+
+### 开发基础（react之参数传递）
+
++ react使用Props来进行参数的传递，使用`this.props.value`从父类中获取属性，如下是父组件传递参数。
+
+```react
+class Board extends React.Component {
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
+}
+```
+
++ 子组件获取参数
+
+```react
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square">
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
+
+### 开发基础（react之记忆功能）
+
++ 给类创建构造函数，并使用super（props）就可以使用`this.state = {value: null,}`定义需要保存的数据。
++ 查时this.state.value`
++ 改时`this.setState({value: xxx})`
+
+```react
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+  render() {
+    return (
+      <button className="square" onClick={() => alert('click')}>
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
+
+### 开发基础（react之安装插件）
+
++ 应用商店自行安装（安装之后可以查看组件树）
+
+## 3、项目部署
