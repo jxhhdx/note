@@ -68,7 +68,7 @@ npm start  # 启动
 
 ## 2、项目开发
 
-### 开发基础（react之Component）
+### 开发基础（react之Class的书写形式）
 
 + 如下是render方法返回组件
 
@@ -103,7 +103,7 @@ React.createElement("div", {
 );
 ```
 
-### 开发基础（react之参数传递）
+### 开发基础（react之参数传递父传子）
 
 + react使用Props来进行参数的传递，使用`this.props.value`从父类中获取属性，如下是父组件传递参数。
 
@@ -129,7 +129,7 @@ class Square extends React.Component {
 }
 ```
 
-### 开发基础（react之记忆功能）
+### 开发基础（react之保存数据）
 
 + 给类创建构造函数，并使用super（props）就可以使用`this.state = {value: null,}`定义需要保存的数据。
 + 查时this.state.value`
@@ -153,8 +153,86 @@ class Square extends React.Component {
 }
 ```
 
-### 开发基础（react之安装插件）
+### 开发基础（react之浏览器插件安装）
 
 + 应用商店自行安装（安装之后可以查看组件树）
+
+### 开发基础（react之参数传递子传父）
+
++ 子组件传递参数的思路是，父组件给子组件传递一个函数，子组件通过父组件给予的函数修改父组件的状态。，如下代码是父组件：
+
+```react
+class Board extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = { squares: Array(9).fill(null),}
+    }
+    // 给子组件传递函数
+    renderSquare(i) {
+        return <Square value={this.state.squares[i]} onClick={() => this.handleClick(i)}/>;
+    }
+
+    handleClick(i) {
+        const squares = this.state.squares.slice()
+        squares[i] = 'X'
+        this.setState({squares: squares})
+    }
+
+    render() {
+        const status = 'Next player: X';
+        return (
+            <div>
+                <div className="status">{status}</div>
+                <div className="board-row">
+                    {this.renderSquare(0)} <!--同上x2-->
+                </div>
+                <!--同上x2-->
+            </div>
+        );
+    }
+}
+```
+
++ 如下是子组件调用父组件的函数，并且传参
+
+```react
+class Square extends React.Component {
+    render() {
+        return (
+            <button  className="square"  onClick = {() => this.props.onClick()}>
+                {this.props.value}
+            </button>
+        );
+    }
+}
+```
+
+### 开发基础（react之类的简写）
+
++ 将class Square转化为function Square
+
+```react
+// class Square extends React.Component {
+//     render() {
+//         return (
+//             <button 
+//                 className="square" 
+//                 onClick = {() => this.props.onClick()}>
+//                 {this.props.value}
+//             </button>
+//         );
+//     }
+// }
+function Square(props) {
+    return (
+        <button className="square" onClick={props.onClick}>
+            {props.value}
+        </button>
+    );
+}
+```
+
+
 
 ## 3、项目部署

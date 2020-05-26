@@ -27,3 +27,17 @@
 ## 多个光标
 
 > `Shift`+`Alt`
+
+## 自动导包
+
+> settings-> 搜索import->Auto import 选中Add和Optimize开头的两个。
+
+## lombok插件的导入
+
+> 应用市场市场搜索lombok插件
+>
+> 导入pom文件中导入lombok依赖
+
+### Free Mybatis plugin
+
+> 应用市场搜索
