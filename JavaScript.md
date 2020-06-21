@@ -1,9 +1,17 @@
+# JavaScript
+
+## 一、对象（objects）
+
++ 对象是可变的键控集合（keyed collections）
+
+
+
 <JavaScript>
 	<script type="text/javascript" src="js1.js"></script>
-	<javascript的输出>
-		window.alert();
-		console.log();
-	<javascript的输出/>
+?	<javascript的输出>
+?		window.alert();
+?		console.log();
+?	<javascript的输出/>
 
 	<数据的类型>
 		number、string、boolean、underfine、null、数组类型（new Array()）

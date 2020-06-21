@@ -44,6 +44,14 @@ mybatis:
     map-underscore-to-camel-case: true
 ```
 
+### Mybatis-generator
+
+```shell
+mvn mybatis-generator:generate
+```
+
+
+
 ## 支付
 
 ### 支付场景
@@ -99,3 +107,133 @@ mybatis:
 
 ## 支付系统架构
 
+### null
+
+### 微信支付异步通知
+
+### 支付宝密钥
+
++  应用公私密钥
++ RSA非对称加密
+  + 发起支付：支付系统（应用私钥）->支付宝（应用公钥）
+  + 异步通知：支付宝（支付宝私钥）->支付系统（支付宝公钥）
++ RSA签名不等于RSA加密
++ 一般加解密使用AES加密
+
+## 小技巧
+
+### 读取yml文件中的配置
+
++ yml文件中进行如下配置：
+
+```yml
+wx:
+  appId: wxd898fcb01713c658
+  mchId: 1483469312
+  mchKey: 098F6BCD4621D373CADE4E832627B4F6
+  notifyUrl: http://undefined-gx.natapp1.cc/pay/notify
+  returnUrl: http://127.0.0.1
+```
+
++ java文件中配置如下所示，调用这个实体类就可以获取配置
+
+
+
+```java
+@Component
+@ConfigurationProperties(prefix = "wx")
+@Data
+public class WxAccountConfig {
+    private String appId;
+    private String mchId;
+    private String mchKey;
+    private String notifyUrl;
+    private String returnUrl;
+}
+```
+
+## 用户模块设计
+
+### Service注册模块设计与测试
+
+
+
+### Controller接收参数
+
++ String方式
+
+```java
+@PostMapping("register")// 有了RequestParam之后参数名字可以随便起
+public void register(@RequestParam(value = "username") String username){ 
+	log.info("username={}", username);
+}
+```
+
++ Obejct方式
+
+```java
+@PostMapping("register")
+public void register(User user){ //传递的参数必须和Object中的属性相同 
+	log.info("username={}", username);
+}
+
+@PostMapping("register") //传递数据类型为json时必须加上RequestBody
+public void register(@RequestBody User user){ //传递的参数必须和Object中的属性相同 
+	log.info("username={}", username);
+}
+```
+
+### 表单的验证
+
+
+
+### 实战登陆
+
+
+
+### Cookie、Session
+
++ 使用sessionId存入到浏览器的cookie中
++ 升级版是使用token和redis配合
+
+Cookie 跨域
+
++ 登录状态什么时候消失？
+
+  过期的时候、服务重启、浏览器重启。
+
+ ### 拦截器模块的开发
+
++ Interceptor----Url
+
+```java
+@Slf4j  // 1、实现接口 2、重写默认方法 
+public class UserLoginInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        log.info("preHandle...");
+        User user = (User) request.getSession().getAttribute(MallConst.CURRENT_USER);
+        if (user == null) {
+            log.info("user==null");
+            throw new UserLoginException();
+        }
+        return true;
+    }
+}
+
+@Configuration  // 1、实现接口 2、重写默认方法 3、注解
+public class InterceptorConfig implements WebMvcConfigurer {
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new UserLoginInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/user/login", "/user/register");
+    }
+}
+```
+
++ AOP ----包名
+
+### 单元测试
+
+> mvn clean package -Dmaven.test.skip=true
