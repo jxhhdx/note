@@ -8,6 +8,8 @@
 
 ```java
 String str = "Hello";str = str.replace("target", "replacement");
+
+
 ```
 
 #### 二、拆分（split）、合并（join）
