@@ -30,14 +30,32 @@
 
 ## 自动导包
 
-> settings-> 搜索import->Auto import 选中Add和Optimize开头的两个。
+> `settings`-> 搜索`import`->`Auto import `选中`Add`和`Optimize`开头的两个。
 
 ## lombok插件的导入
 
-> 应用市场市场搜索lombok插件
+> 应用市场市场搜索`lombok`插件
 >
-> 导入pom文件中导入lombok依赖
+> 导入`pom`文件中导入`lombok`依赖
 
 ### Free Mybatis plugin
 
 > 应用市场搜索
+
+## 默认注释模板
+
+>  `File`-->`settings`-->`Editor`-->`File and Code Templates`-->`Files` 
+
+## 大小写转换
+
+> `Ctrl`+`shift`+`U`
+
+## 自动去除不使用的包
+
+> `Ctrl`+`Alt`+`O` `手动去除不使用的import`
+>
+> `File`+`Setting`+`General`+`Auto Import+Optimize imports on the fly` `自动去除不使用的包`
+
+## tomcat乱码问题
+
+> ## `-Dfile.encoding=UTF-8` 

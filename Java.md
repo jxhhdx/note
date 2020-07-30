@@ -39,3 +39,33 @@ Map<Integer, Integer> collect = cartList.stream()
     .collect(Collectors.toMap(Cart::getProductId, Cart::getQuantity));// 转为List
 ```
 
+### 正反序列化
+
++ 使用gson、fastson、jackson进行序列化
+
+```java
+
+// Gson正反
+People people = gson.fromJson(DATA, People.class);
+String json = gson.toJson(people1);
+// Jackson正反
+ObjectMapper mapper = new ObjectMapper();
+String s = mapper.writeValueAsString(people1);
+People people = mapper.readValue(DATA2, People.class);
+// fastjson正反
+String jsonString = JSON.toJSONString(people1);
+People parseObject = JSON.parseObject(DATA, People.class);
+```
+
+### 反射
+
+
+
+
+
+### MD5摘要算法
+
+> ```java
+> String s = DigestUtils.md5DigestAsHex("hello".getBytes(StandardCharsets.UTF_8));
+> ```
+

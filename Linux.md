@@ -196,6 +196,15 @@ wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
 rpm -ivh mysql-community-release-el7-5.noarch.rpm
 yum update
 yum install mysql-server
+vi /etc/my.cnf    #编辑文件，找到[mysqld]，在下面添加一行skip-grant-tables
+service mysqld restart
+update mysql.user set password=password('123456') where User="root" and Host="localhost";
+flush privileges;  #刷新系统授权表
+grant all on *.* to 'root'@'localhost' identified by '123456' with grant option;
+# 注释掉skip-grant-tables，重启mysql
+# use mysql; 
+# update user set host='%' where user='root' and host='localhost'; 
+# select host,user from user; flush privileges;
 ```
 
 ```shell
@@ -360,4 +369,6 @@ firewall-cmd --reload
 22. 重命名文件和文件夹
 23. 复制剪切清空和删除文件
 24. Linux通信
+
+
 
