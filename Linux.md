@@ -60,7 +60,7 @@ find 目录 [-name/user/size] 参数
 who  # 查看用户命令
 useradd [-g 群组] 用户名  #添加用户命令
 passwd 用户名  # 添加用户密码
-userdel [-r] 用户名  # 删除用户	
+userdel [-r] 用户名  # 删除用户
 ```
 - **群组管理**
 ```shell
@@ -122,60 +122,36 @@ tar [-cvf //打包 -xvf //解包 -tf
   > -y 自动回答 yes
 
 # vim编辑器
-			vi编辑器：命令模式（可以向其它模式转换）、编辑模式()、最后行模式
-			vi 文件名称
-	
-			命令模式
-	
-			h  j  k  l
-			左 下 上 右
-	
-			dd 剪切当前行
-			yy 复制
-			p 下一行黏贴  P 上一行黏贴ps 
-	
-			a在光标后插入   A在当行末插入
-			i在光标前插入	I在当行首插入
-			o在当前行之下插入 O在上一行插入
-	
-			编辑模式
-	
-			:
-			最末行模式
-			:set nu 显示行号
-			:w 保存
-			:wq 保存并退出
+```shell
+# vi编辑器：命令模式（可以向其它模式转换）、编辑模式(可以进行文件编辑)、最后行模式
+```
 
 # JDK环境的部署与项目发布
-```
-<应用的上传>
-	rz命令（没有的话使用yum -y install lrzsz）
-<应用的上传>
+```shell
+# 应用的上传 没有的话使用yum -y install lrzsz
+rz
+# JDK环境的配置
 
-<JDK环境的配置>
-	下载文件后给予777权限
-	拷贝到/opt目录下
-	解压jdk
-	解压后进入jdk目录
-	拷贝jdk目录
-	vi进入/etc/profile
-	JAVA_HOME=
-	CLASSPATH=.:$JAVA_HOME/lib
-	PATH=$PATH:&JAVA_HOME/bin
+# 下载文件后给予777权限
+# 拷贝到/opt目录下
+# 解压jdk
+# 解压后进入jdk目录
+# 拷贝jdk目录
+vim /etc/profile
+# JAVA_HOME=
+# CLASSPATH=.:$JAVA_HOME/lib
+# PATH=$PATH:&JAVA_HOME/bin
 
-​	export JAVA_HOME CLASSPATH PATH
-​	source profile //使文件生效 
-​	java -version javac//检查是否正常
-<JDK环境的配置>
+export JAVA_HOME CLASSPATH PATH
+source profile  # 使文件生效 
+java -version javac  # 检查是否正常
 
-<tomcat的部署>
-	解压就可使用，进入apache的bin目录
-	./startup.sh完成启动
-	ps -ef|grep tomcat 检查运行状态
-	将war包放入webapps目录下，赋予权限
-	访问项目路径即可
-<tomcat的部署>
-<firewall-cmd --state><systemctl stop firewalld.service>
+# tomcat的部署
+# 解压就可使用，进入apache的bin目录
+# ./startup.sh完成启动
+ps -ef|grep tomcat  # 检查运行状态
+# 将war包放入webapps目录下，赋予权限
+# 访问项目路径即可
 ```
 
 # node安装
@@ -213,6 +189,8 @@ firewall-cmd --permanent --add-port=3306/tcp
 #重启防火墙(修改配置后要重启防火墙)
 firewall-cmd --reload
 ```
+
+# nodejs安装
 
 ```shell
 sudo apt-get install nodejs # 安装nodejs
@@ -335,6 +313,41 @@ firewall-cmd --reload
 2、--permanent：表示设置为持久；
 3、--add-port：标识添加的端口；
 ```
+
+# nginx 安装
+
+
+
+```shell
+# 下载
+wget https://imcfile.oss-cn-beijing.aliyuncs.com/shizhan/file/liaoshixiong/nginx-1.16.1.tar.gz 
+# 解压
+tar zxvf nginx-1.16.1.tar.gz
+# 解压之后进入目录
+cd nginx-1.16.1/
+
+## 更新yum
+yum update
+## 安装插件
+yum install -y zlib-devel openssl openssl-devel
+# 设置安装目录
+./configure --prefix=/usr/local/nginx
+# 编译安装
+make
+make install
+# 启动nginx
+nginx
+# 配置快捷
+cd ~
+vim .bash_profile
+# 进行如下配置PATH=$PATH:/usr/local/nginx/sbin
+source .bash_profile
+# 查看运行状态
+ps -ef | grep nginx
+```
+
+
+
 
 # 实战题
 
