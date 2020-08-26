@@ -315,6 +315,20 @@ mvn mybatis-generator:generate
 
 ## 小技巧
 
+
+
+### Springboot项目部署之术
+
+> mvn clean package  // 打包项目
+
+```shell
+# 作为一个服务来进行部署
+
+vim /etc/systemd/system/mall.servie
+```
+
+
+
 ### 读取yml文件中的配置
 
 + yml文件中进行如下配置：
@@ -344,6 +358,21 @@ public class WxAccountConfig {
     private String returnUrl;
 }
 ```
+### MySql小技巧
+
+```sql
+alter table mall_user modify create_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间';
+alter table mall_user modify edit_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后一次更新时间';
+```
+
+### Spring工具拷贝类中属性相同的值
+
+```java
+BeanUtils.copyProperties(源, 目标); // 无法直接拷贝List集合，需要迭代集合中的对象，一个一个复制。
+```
+
+
+
 
 ## 用户模块设计
 
@@ -429,4 +458,4 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 ### 单元测试
 
-> mvn clean package -Dmaven.test.skip=true
+> mvn clean package -Dmaven.test.skip=tru

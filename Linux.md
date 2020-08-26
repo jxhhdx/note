@@ -130,8 +130,19 @@ tar [-cvf //打包 -xvf //解包 -tf
 ```shell
 # 应用的上传 没有的话使用yum -y install lrzsz
 rz
-# JDK环境的配置
+# 或下载
+wget https://imcfile.oss-cn-beijing.aliyuncs.com/shizhan/file/liaoshixiong/jdk-8u231-linux-x64.tar.gz
+# 解压
+tar zxvf jdk-8u231-linux-x64.tar.gz
+# 移动到/usr/local/目录之下
+mv jdk1.8.0_231 /usr/local/
 
+vim .bash_profile
+JAVA_HOME=/usr/local/jdk1.8.0_231
+PATH=$PATH:$JAVA_HOME/bin
+source .bash_profile
+# JDK环境的配置
+ 
 # 下载文件后给予777权限
 # 拷贝到/opt目录下
 # 解压jdk
@@ -154,17 +165,7 @@ ps -ef|grep tomcat  # 检查运行状态
 # 访问项目路径即可
 ```
 
-# node安装
 
-```shell
-# wget https://nodejs.org/dist/v10.9.0/node-v10.9.0-linux-x64.tar.xz    // 下载
-# tar xf  node-v10.9.0-linux-x64.tar.xz       // 解压
-# cd node-v10.9.0-linux-x64/                  // 进入解压目录
-# ./bin/node -v                               // 执行node命令 查看版本
-# v10.9.0                                     // 结果
-# ln -s /usr/software/nodejs/bin/npm   /usr/local/bin/                  // 设置命令软链接
-# ln -s /usr/software/nodejs/bin/node   /usr/local/bin/
-```
 # mysql安装
 
 ```shell
@@ -208,7 +209,17 @@ nux/gpu/tensorflow_gpu-2.0.0-cp36-cp36m-linux_x86_64.whl
 pip3 install --upgrade $TF_BINARY_URL 
 ```
 
+# node安装
 
+```shell
+# wget https://nodejs.org/dist/v10.9.0/node-v10.9.0-linux-x64.tar.xz    // 下载
+# tar xf  node-v10.9.0-linux-x64.tar.xz       // 解压
+# cd node-v10.9.0-linux-x64/                  // 进入解压目录
+# ./bin/node -v                               // 执行node命令 查看版本
+# v10.9.0                                     // 结果
+# ln -s /usr/software/nodejs/bin/npm   /usr/local/bin/                  // 设置命令软链接
+# ln -s /usr/software/nodejs/bin/node   /usr/local/bin/
+```
 
 ```json
 This is a test . <eos>
@@ -238,36 +249,28 @@ INFO:tensorflow:Restoring parameters from ./seq2seq_ckpt-9000
 1、基本操作
 
 # 查看防火墙状态
-
 service iptables status  
 
 # 停止防火墙
-
 service iptables stop  
 
 # 启动防火墙
-
 service iptables start  
 
 # 重启防火墙
-
 service iptables restart  
 
 # 永久关闭防火墙
-
 chkconfig iptables off  
 
 # 永久关闭后重启
-
 chkconfig iptables on　　
 
 2、开启80端口
-
 vim /etc/sysconfig/iptables
 # 加入如下代码
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 保存退出后重启防火墙
-
 service iptables restart
 
 ```
