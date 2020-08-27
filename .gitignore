@@ -1,0 +1,7 @@
+node_modules/
+.project
+.idea
+unpackage/
+.DS_Store
+wxcomponents/**/*.vue
+wxcomponents/**/*.css
