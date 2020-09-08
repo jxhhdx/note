@@ -59,3 +59,12 @@
 ## tomcat乱码问题
 
 > ## `-Dfile.encoding=UTF-8` 
+
+```shell
+# 修改 tomcat/conf/logging.properties 文件中的 java.util.logging.ConsoleHandler.encoding = UTF-8
+# 修改为 java.util.logging.ConsoleHandler.encoding = GBK
+
+# 修改 tomcat/bin/catalina.bat 中 216行 set "JAVA_OPTS=%JAVA_OPTS% %JSSE_OPTS%
+# 修改为 set "JAVA_OPTS=%JAVA_OPTS% %JSSE_OPTS% -server -Dfile.encoding=GBK"
+```
+
