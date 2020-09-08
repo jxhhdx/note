@@ -458,4 +458,4 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
 ### 单元测试
 
-> mvn clean package -Dmaven.test.skip=tru
+> mvn clean package -Dmaven.test.skip=true
