@@ -459,3 +459,17 @@ public class InterceptorConfig implements WebMvcConfigurer {
 ### 单元测试
 
 > mvn clean package -Dmaven.test.skip=true
+
+## nginx
+
++ 代理配置
+
+```shell
+vim /usr/local/nginx/conf/nginx.conf  # 修改配置文件
+# 在server下加入
+## location /api/ {
+##     proxy_pass http://127.0.0.1:8080/
+## }
+nginx -s reload
+```
+
