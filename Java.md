@@ -324,7 +324,7 @@ mvn mybatis-generator:generate
 ```shell
 # 作为一个服务来进行部署
 
-vim /etc/systemd/system/mall.servie
+vim /etc/systemd/system/wuancake_api.service
 ```
 
 
