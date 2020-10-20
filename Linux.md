@@ -141,6 +141,7 @@ vim .bash_profile
 JAVA_HOME=/usr/local/jdk1.8.0_231
 PATH=$PATH:$JAVA_HOME/bin
 source .bash_profile
+java -version
 # JDK环境的配置
  
 # 下载文件后给予777权限
