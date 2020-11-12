@@ -315,6 +315,35 @@ mvn mybatis-generator:generate
 
 ## 小技巧
 
+### 返参除null之术
+
+```
+// 加上注解
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
+
+springMVC.xml
+
+<!-- 默认的注解映射的支持 比如requestMapper之类的 -->
+<mvc:annotation-driven>
+<mvc:message-converters>
+<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+<property name="objectMapper">
+<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+<property name="serializationInclusion">
+<value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+</property>
+</bean>
+</property>
+</bean>
+</mvc:message-converters>
+</mvc:annotation-driven>
+
+ 
+
+--------------spring boot 的配置
+spring.jackson.default-property-inclusion=non_null
+```
+
 
 
 ### Springboot项目部署之术
