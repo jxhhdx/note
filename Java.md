@@ -99,7 +99,7 @@ People parseObject = JSON.parseObject(DATA, People.class);
   2. 前后端技术选型
   3. 前后端分离开发模式
   4. 后端架构分层模式设计
-  5. 数据库表设计（使用数据库设计工具设计表）
+  5. 数据库表设计（PDMan）
   6. SpringBoot Spring Mybatis项目整合
 + 实现单体电商项目核心功能开发
 + 实现单体电商项目个人中心功能
