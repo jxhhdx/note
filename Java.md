@@ -38,7 +38,7 @@ Map<Integer, Integer> collect = cartList.stream()
         return e;
     }) // 对List中的对象的进行处理，在这里将两个属性置为0
     .sorted(Comparator.comparing(Cart::getProductId).reversed())  // 根据productId降序排序(Map无效)
-    .collect(Collectors.toMap(Cart::getProductId, Cart::getQuantity));// 转为List
+    .collect(Collectors.toMap(Cart::getProductId, Cart::getQuantity));// 转为Map
 ```
 
 ### 正反序列化
