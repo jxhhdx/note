@@ -7,13 +7,13 @@
 - python有六种数据类型：分别是Number（数字）、String（字符串）、List（列表）、Tuple（元组）、Set（集合）、Dictionary（字典）。
 - Number、String、Tuple不可变。List、Set、Dictionary可变。
 
-### Number
+Number
 
 - 有int、float、bool、complex(复数(1+4j))类型
 - 类型测试type()、isinstance(a,int)
 - 6 // 9 = 0 , 2 ** 3 = 2 x 2 x 2 = 8
 
-### String
+String
 
 - print(r"le\n") ;r可以原样输出
 
@@ -27,7 +27,7 @@ print(str[2:])  # 第三个及之后
 print(str * 2)  # 输出两遍str
 ```
 
-#### String运算符
+1. String运算符
 
 ```python
 # 假设a="hello world"
@@ -36,7 +36,7 @@ not in # 类同上
 print(r"\n")      # r/R原样输出如果没有如`\n`这个样的转义字符会生效
 ```
 
-#### 字符串格式化
+2. 字符串格式化
 
 ```python
 print ("我叫 %s 今年 %d 岁!" % ('小明', 10))
@@ -89,9 +89,7 @@ TAB (    )。
 """
 ```
 
-
-
-### List
+List
 
 - List写在[]之间，元素用逗号隔开。List是可变的。List中的元素可以是不同的
 
@@ -101,13 +99,12 @@ TAB (    )。
 
 - list[1,2,3,4,5] 使用list[-1::-1]会反着输出。
 
-
-### Tuple
+Tuple
 
 - 元组性质与List列表类似，就是tuple元素不可变。
 -  tup1 = ('physics', 'chemistry', 1997, 2000) 
 
-### Set
+Set
 
 - set集合大括号`{}`或者`set()`函数创建集合，创建一个空集必须使用`set()`而不是`{}`,因为`{}`是用来创建一个空字典。
 
@@ -138,7 +135,7 @@ print(a & b)     # a 和 b  {'a', 'c'}
 print(a ^ b)     # a 和 b 中不同时存在的元素 {'l', 'r', 'z', 'm', 'b', 'd'}
 ```
 
-### Dictionary
+Dictionary
 
 + 字典类似于java中的Map集合，其存储形式和json的格式类似，可以使用key-value的形式访问。
 + dict['key'] = value`或`dict = { 'key' : 'value' , 'key1' : 'value1'}
@@ -199,19 +196,19 @@ next(it)  # 4
 
 ## 6.异常
 
-### try-except
+try-except
 
 ![img](/public/image/python03.png) 
 
-### try-except-else
+try-except-else
 
 ![img](/public/image/python04.png) 
 
-### try-except-else-finally
+try-except-else-finally
 
 ![img](/public/image/python05.png) 
 
-### raise
+raise
 
 ```python
 x = 10 
@@ -219,7 +216,7 @@ if x > 5:
     raise Exception('x 不能大于 5。x 的值为:{}'.format(x)) 
 ```
 
-### 自定义异常
+自定义异常
 
 ```python
 class MyError(Exception):
@@ -269,7 +266,7 @@ print("MyClass 类的属性 i 为：", x.i)
 print("MyClass 类的方法 f 输出为：", x.f())
 ```
 
-###  构造方法
+构造方法
 
 - 使用`__init__`来定义
 
@@ -278,17 +275,17 @@ def __init___(self):
     self.data = []
 ```
 
-### private 
+private 
 
 - `__属性`等价于`private 属性`
 - 可以用来修饰方法与属性
 
-### 继承
+继承
 
 - python继承是多继承的
 - student类继承people(class student(people))
 
-### 重写
+重写
 
 ```python
 class Parent:        # 定义父类
@@ -304,7 +301,7 @@ c.myMethod()         # 子类调用重写方法
 super(Child,c).myMethod() #用子类对象调用父类已被覆盖的方法
 ```
 
-### 类的专有方法
+类的专有方法
 
 ```python
 __init__ # 构造函数，在生成对象时调用
@@ -329,7 +326,7 @@ __pow__ # 乘方
 
 ## 11.其它
 
-### lambda 表达式
+lambda 表达式
 
 - lambda 表达式的写法如下：
 
@@ -337,15 +334,21 @@ __pow__ # 乘方
   lambda 参数1, 参数2, 参数N: 函数实现
   ```
 
-### IO操作
+IO操作
 
-
-### 安装
+安装
 
 + 见菜鸟教程
 
 >  https://www.runoob.com/numpy/numpy-install.html 
 
-## pip
+pip
 
 >  pip install -i https://pypi.tuna.tsinghua.edu.cn/simple requests 
+
+# Python之Excel
+
++ 安装环境
+
+> 安装python运行环境`https://www.python.org`或Anaconda` https://www.anaconda.com/products/individual `
+
