@@ -1,5 +1,28 @@
 # Linux
 
+## 资源管理命令
+
+```shell
+# 查看内核版本
+cat /proc/version
+uname -srm 
+cat /etc/issue
+# 查看CPU
+# 查看内存
+# 查看硬盘
+df -lh
+# 查看应用占用资源
+ps aux # CPU 内存占比 虚拟内存kb 物理内存kb
+top 
+#top - 21:54:34 up 75 days,  9:33,  1 user,  load average: 0.00, 0.03, 0.05 (1,5,15分钟)
+#Tasks:  93 total,   1 running,  92 sleeping,   0 stopped(停止进程),   0 zombie(僵尸进程)
+#%Cpu(s):  0.3 us(用户),  0.7 sy(系统),  0.0 ni, 98.7 id(空闲),  0.3 wa,  0.0 hi,  0.0 si,  0.0 st
+#KiB(内存) Mem :  1882192 total,    73180 free,(空闲)   571040 used,  1237972 buff/cache
+#KiB Swap:        0 total,        0 free,        0 used.  1119552 avail Mem 
+```
+
+
+
 ## 目录管理命令行
 - **目录查看、切换、显示当前目录**
   	
