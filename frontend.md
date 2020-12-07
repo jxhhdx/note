@@ -1123,11 +1123,11 @@ arr.forEach((item,index) => {console.log(item,index)});   // 遍历数组
 arr.every((item, index) =>{if(item%2==1){return true}});  // 满足条件返回false
 arr.some((item, index) =>{if(item%2==1){return true}});   // 满足条件返回true
 a.sort();                                                 // 排序
-arr.sort((a,b) => { return a - b });                      // 升序
-arr.map((item,index)=>{return item*2});                   // 数组乘二
-arr.filter(((item,index)=>{return item%2==1}));           // 过滤返回true的留下
-arr.concat([1,2]);         // 拼接数组,可以连续拼接多个数组
-arr.slice(1,3);            // 截取数组[2,3)
+arr.sort((a,b) => { return a - b });                      // 升序，对原数组进行修改
+arr.map((item,index)=>{return item*2});                   // 数组乘二，返回新的数组
+arr.filter(((item,index)=>{return item%2==1}));           // 过滤返回true的留下，返回新的数组
+arr.concat([1,2]);         // 拼接数组,可以连续拼接多个数组。返回一个新的数组
+arr.slice(1,3);            // 截取数组[2,2] 
 arr.join("");              // 拼接数组成字符串，默认逗号分割，参数用来指定拼接字符串的分割
 arr.shift();               // 删除数组第一个，并返回
 arr.unshift();             // 添加到数组第一个
@@ -1152,5 +1152,12 @@ Object.defineProperty(obj, propertyName, props)
 Object.entries(obj)                      // 将对象转化成数组，例如：{a:1,b:2}变成[['a',1],['b',2]] 
 Object.freeze(obj)                       // 冻结对象，使得对象的属性变的不可修改，当属性为引用类型的时候，该属性中的值可以修改
 Object.seal(obj)                         // 锁定对象，使得对象不可添加属性
+```
+
+## of in
+
+```javascript
+// of在foreach中遍历object时会报错，遍历数组时遍历数组的每一个项目
+// in在foreach中遍历object时遍历每一个key，遍历数组时遍历每一个下标
 ```
 
