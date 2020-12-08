@@ -1107,7 +1107,7 @@ location.hash  // #id=100
 
 
 
-# 通用小技巧
+# 常用技能
 
 ### 代码运行时间检测
 
@@ -1154,12 +1154,24 @@ Object.freeze(obj)                       // 冻结对象，使得对象的属性
 Object.seal(obj)                         // 锁定对象，使得对象不可添加属性
 ```
 
-## of in
+### of in
 
 ```javascript
 // of在foreach中遍历object时会报错，遍历数组时遍历数组的每一个项目
 // in在foreach中遍历object时遍历每一个key，遍历数组时遍历每一个下标
 1 in [1,2]  // 判断数组中是否存在1，true
 1 in {1:1,2:2}  // 同理
+```
+
+### apply call bind
+
+```javascript
+// 1、作用都是使方法中的this指向传入的db；
+// 2、bind不是自执行，call、apply是自执行的；
+// 3、call参数可以直接传入，使用逗号分隔；而apply需要放在数组中；bind前二者都可以；
+obj.myFun.call(db,'成都','上海')；　　　　 // 德玛 年龄 99  来自 成都去往上海
+obj.myFun.apply(db,['成都','上海']);      // 德玛 年龄 99  来自 成都去往上海  
+obj.myFun.bind(db,'成都','上海')();       // 德玛 年龄 99  来自 成都去往上海
+obj.myFun.bind(db,['成都','上海'])();　　 // 德玛 年龄 99  来自 成都, 上海去往 undefined
 ```
 
