@@ -150,6 +150,14 @@ getElementByName();  // 获取对应name的节点
 getElementByTagName();  // 获取对应的标签名的节点集合
 querySelector();  // 选择器方式选择节点
 querySelectorAll();  // 选择器方式批量选择节点
+// 获取子节点
+elem.childNodes[i]
+elem.parentNode
+elem.firstChild
+elem.lastChild
+elem.previousSibling
+elem.nextSibling
+
 ```
 
 + 删除节点
