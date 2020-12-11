@@ -1159,7 +1159,7 @@ Object.seal(obj)                         // 锁定对象，使得对象不可添
 ```javascript
 // of在foreach中遍历object时会报错，遍历数组时遍历数组的每一个项目
 // in在foreach中遍历object时遍历每一个key，遍历数组时遍历每一个下标
-1 in [1,2]  // 判断数组中是否存在1，true
+1 in [1,2]  // 判断数组索引1的位置是否有值（值包括null、undefined），有则true
 1 in {1:1,2:2}  // 同理
 ```
 
