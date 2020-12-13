@@ -180,13 +180,66 @@ vim /etc/profile
 export JAVA_HOME CLASSPATH PATH
 source profile  # 使文件生效 
 java -version javac  # 检查是否正常
+```
 
-# tomcat的部署
-# 解压就可使用，进入apache的bin目录
-# ./startup.sh完成启动
-ps -ef|grep tomcat  # 检查运行状态
-# 将war包放入webapps目录下，赋予权限
-# 访问项目路径即可
++ 如果项目之中已经存在openJDK，使用如下方式卸载
+
+```shell
+rpm -qa|grep openjdk -i # 检查
+rpm -e --nodeps 需要删除的软件
+```
+
+
+
+
+## 发布java项目
+
++ tomcat运行项目
+
+```shell
+# tomcat下载linux版服务器、安装、启动
+# 普通项目直接打包war之后放入webapp
+# springboot war打包
+## [1] 修改打包方式为war
+## [2] 排除springboot自带的tomcat，添加servlet包
+#<dependency>
+#    <groupId>javax.servlet</groupId>
+#    <artifactId>javax.servlet-api</artifactId>
+#    <version>3.1.0</version>
+#    <scope>provided</scope>
+#</dependency>
+## [3] 修改入口类
+#public class WarStarterApplication extends SpringBootServletInitializer {
+#    @Override
+#    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+#        return builder.sources(WuancakeApiApplication.class);
+#    }
+#}
+## [4] mvn clean pakcage -Dmaven.test.skip=true
+```
+
++ service方式运行
+
+> `/etc/systemd/system/mall.service`,如下是配置示例
+
+```shell
+[Unit]
+Description=mall
+After=syslog.target
+[Service]
+User=root
+ExecStart=/usr/local/jdk1.8.0_231/bin/java -jar -Dspring.profiles.active=prod /root/mall.jar
+[Install]
+WantedBy=multi-user.target
+
+[Unit]
+Description=wuancake_api
+After=syslog.target
+[Service]
+User=root
+ExecStart=/usr/local/jdk1.8.0_231/bin/java -jar -Dlogging.path=/root/logs/mall/ /root/wuancake_api.jar
+[Install]
+WantedBy=multi-user.target
 ```
 
 

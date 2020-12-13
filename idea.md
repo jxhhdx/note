@@ -68,3 +68,6 @@
 # 修改为 set "JAVA_OPTS=%JAVA_OPTS% %JSSE_OPTS% -server -Dfile.encoding=GBK"
 ```
 
+## 查看依赖结构
+
+> `Ctrl`+`Alt`+`Shift`+`U`进入结构之后可以选择排除
