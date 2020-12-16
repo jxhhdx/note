@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const a = [
+            { id: 1, pid: 1, name: 'test' },
+            { id: 2, pid: 1, name: 'test2' },
+            { id: 3, pid: 2, name: 'test3' },
+            { id: 4, pid: 2, name: 'test4' },
+        ];
+        const b = [
+            { id: 1, name: "p1" },
+            { id: 2, name: "p2" },
+        ]
+        a.map((item,index)=>{
+            let ccc
+            b.map((e,i)=>{
+                if(e.id === item.pid){
+                    ccc = e.name
+                }
+            })
+            item.pname = ccc
+        })
+        const c = a;
+        console.log(c)
+    </script>
+</body>
+
+</html>
