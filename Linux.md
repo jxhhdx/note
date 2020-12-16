@@ -426,10 +426,58 @@ source .bash_profile
 ps -ef | grep nginx
 ```
 
+# redis安装
+
+```shell
+tar zxvf redis-5.0.5.tar.gz
+cd redis-5.0.5/
+yum install gcc-c++
+make 
+make install
+mkdir utils
+cd utils
+cp redis_init_script /etc/init.d/
+cp redis.conf /usr/local/redis
+mkdir /usr/local/redis
+cd /usr/local/redis
+vim /usr/local/redis/redis.conf
+## 进行如下修改
+# port 6379 修改端口
+# bind 0.0.0.0 修改可以访问的ip
+# daemonize yes 是否可以客户端访问
+# dir /usr/local/redis/working 设置工作空间
+# requirepass 9H8J3um2 设置密码
+## 修改redis脚本
+vim /etc/init.d/redis_init_script 
+# CONF="/usr/local/redis/redis.conf" 设置配置文件的位置
+chmod 777 redis_init_script
+./redis_init_script start 
+## 如果需要redis跟随服务器启动进行如下配置
+vim /etc/init.d/redis_init_script 
+# #chkconfig: 22345 10 90 设置自启动
+# #description: Start and Stop redis 设置自启动
+chkconfig redis_init_script on # 设置自启动
+
+```
 
 
 
-# 实战题
+# docker安装
+
+```shell
+ # 下载docker
+ curl -fsSL https://get.docker.com | bash -s docker 
+ # 启动docker
+ systemctl restart docker
+ # 安装 rabbitmq
+ docker run -d -p 5672:5672 -p 15672:15672 registry.cn-shanghai.aliyuncs.com/springcloud-imooc/rabbitmq:3.8.2-management
+ 
+```
+
+
+
+
+# 流量、实战题
 
 1. 查看正在执行的的进程
 > ps aux | cat
