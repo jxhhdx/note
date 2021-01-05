@@ -394,7 +394,7 @@ firewall-cmd --reload
 3、--add-port：标识添加的端口；
 ```
 
-# nginx 安装
+# nginx 安装及配置、使用
 
 
 
@@ -425,6 +425,32 @@ source .bash_profile
 # 查看运行状态
 ps -ef | grep nginx
 ```
+
++ nginx.conf配置结构
+
+```shell
+# main 全局配置
+# events 配置工作模式以及连接数
+# http http相关配置
+  ## server 配置虚拟主机，可以有多个
+     ### location路由规则，表达式
+     ### upstream 集群，内网服务器、负载均衡
+```
+
+* main配置
+
+```shell
+#user  nobody; 指定运行的用户，默认是nobody
+worker_processes  1; # cpu数
+# debug info notice warn error crit
+#error_log  logs/error.log; 错误日志 默认
+#error_log  logs/error.log  notice; 日志级别
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid; 进程号
+```
+
+
 
 # redis安装
 

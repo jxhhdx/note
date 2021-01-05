@@ -1183,3 +1183,9 @@ obj.myFun.bind(db,'成都','上海')();       // 德玛 年龄 99  来自 成都
 obj.myFun.bind(db,['成都','上海'])();　　 // 德玛 年龄 99  来自 成都, 上海去往 undefined
 ```
 
+### DOM API
+
+```javascript
+classList // 获取标签对象列表 
+dataset // 存放数据到标签
+```
