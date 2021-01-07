@@ -394,7 +394,7 @@ firewall-cmd --reload
 3、--add-port：标识添加的端口；
 ```
 
-# nginx 安装
+# nginx 安装及配置、使用
 
 
 
@@ -426,6 +426,47 @@ source .bash_profile
 ps -ef | grep nginx
 ```
 
++ nginx.conf配置结构
+
+```shell
+# main 全局配置
+# events 配置工作模式以及连接数
+# http http相关配置
+  ## server 配置虚拟主机，可以有多个
+     ### location路由规则，表达式
+     ### upstream 集群，内网服务器、负载均衡
+```
+
+* main配置
+
+```shell
+#user  nobody; 指定运行的用户，默认是nobody
+worker_processes  1; # cpu数
+# debug info notice warn error crit
+#error_log  logs/error.log; 错误日志 默认
+#error_log  logs/error.log  notice; 日志级别
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid; 进程号
+```
+
++ nginx日志切割
+
+ 1. 创建一个可执行文件`cut_my_log.sh`，进行日志分割,文件内容如下
+
+```shell
+# ! /bin/bash
+LOG_PATH="/var/log/nginx/"
+RECORD_TIME=$(date -d "yesterday" +%Y-%m-%d+%H:%M)
+PID=/var/run/nginx/nginx.pid
+mv ${LOG_PATH}/access.log ${LOG_PATH}/access.${RECORD_TIME}.log
+mv ${LOG_PATH}/error.log ${LOG_PATH}/error.${RECORD_TIME}.1og
+#向Nginx主进程发送信号，用于重新打开日志文件
+kill -USR1 `cat $PID`
+```
+
+2. 授予权限后执行即可进行日志手动分割,`chmod +x cut_my_log.sh`
+
 # redis安装
 
 ```shell
@@ -441,7 +482,7 @@ cp redis.conf /usr/local/redis
 mkdir /usr/local/redis
 cd /usr/local/redis
 vim /usr/local/redis/redis.conf
-## 进行如下修改
+## 对配置文件进行如下修改
 # port 6379 修改端口
 # bind 0.0.0.0 修改可以访问的ip
 # daemonize yes 是否可以客户端访问
@@ -477,7 +518,7 @@ chkconfig redis_init_script on # 设置自启动
 
 
 
-# 流量、实战题
+# 实战题
 
 1. 查看正在执行的的进程
 > ps aux | cat
