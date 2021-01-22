@@ -936,7 +936,7 @@ function Square(props) {
 // <5>、如何理解JSON
 // + 数据格式和JS对象
 // <6>、如何准确判断一个变量是数组类型
-// + 使用instanceof
+// + 使用instanceof eg: ([]) instanceof Array // 因为比较的对象是数组类型所以会返回一个true
 // <7>、如何写一个原型链继承的例子
 // + Dog.prototype = new Animal()
 // <8>、如何描述一个对象的过程
@@ -1177,7 +1177,7 @@ Object.seal(obj)                         // 锁定对象，使得对象不可添
 // 1、作用都是使方法中的this指向传入的db；
 // 2、bind不是自执行，call、apply是自执行的；
 // 3、call参数可以直接传入，使用逗号分隔；而apply需要放在数组中；bind前二者都可以；
-obj.myFun.call(db,'成都','上海')；　　　　 // 德玛 年龄 99  来自 成都去往上海
+obj.myFun.call(db,'成都','上海');　　　　 // 德玛 年龄 99  来自 成都去往上海
 obj.myFun.apply(db,['成都','上海']);      // 德玛 年龄 99  来自 成都去往上海  
 obj.myFun.bind(db,'成都','上海')();       // 德玛 年龄 99  来自 成都去往上海
 obj.myFun.bind(db,['成都','上海'])();　　 // 德玛 年龄 99  来自 成都, 上海去往 undefined
@@ -1188,4 +1188,6 @@ obj.myFun.bind(db,['成都','上海'])();　　 // 德玛 年龄 99  来自 成�
 ```javascript
 classList // 获取标签对象列表 
 dataset // 存放数据到标签
+// 获取样式属性
+document.defaultView.getComputedStyle(DOM, NULL)
 ```
