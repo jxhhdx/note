@@ -513,9 +513,11 @@ chkconfig redis_init_script on # 设置自启动
  # 安装 rabbitmq
  docker run -d -p 5672:5672 -p 15672:15672 registry.cn-shanghai.aliyuncs.com/springcloud-imooc/rabbitmq:3.8.2-management
  
+ 
+ 
 ```
 
-
+> 更多docker资料见`./docker`
 
 
 # 实战题
