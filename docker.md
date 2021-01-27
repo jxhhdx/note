@@ -54,14 +54,6 @@ docker exec -it id或者名称 /bin/bash
 docker build -t runoob/centos:6.7 .
 ```
 
-## 命令大全
-
->  https://www.runoob.com/docker/docker-command-manual.html 
-
-## 镜像、资料
-
->  https://www.runoob.com/docker/docker-resources.html 
->   [Docker 入门教程 - 阮一峰的网络日志 (ruanyifeng.com)](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html) 
 
 ## Dockerfile常用命令
 
@@ -80,4 +72,13 @@ docker build -t runoob/centos:6.7 .
 | ENTRYPOINT | 容器入口                                                     |
 | USER       | 指定用户                                                     |
 | VOLUME     | 挂载节点                                                     |
+
+## 命令大全
+
+>  https://www.runoob.com/docker/docker-command-manual.html 
+
+## 镜像、资料
+
+>  https://www.runoob.com/docker/docker-resources.html 
+>   [Docker 入门教程 - 阮一峰的网络日志 (ruanyifeng.com)](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html) 
 
