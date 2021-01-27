@@ -513,10 +513,17 @@ chkconfig redis_init_script on # 设置自启动
  # 安装 rabbitmq
  docker run -d -p 5672:5672 -p 15672:15672 registry.cn-shanghai.aliyuncs.com/springcloud-imooc/rabbitmq:3.8.2-management
  
- 
+ # 卸载
+ systemctl stop docker
+  yum list installed |grep docker
+  rpm -qa |grep docker
+  yum -y remove docker.x86_64 # 删除相关
+  rm -rf /var/lib/docker
  
 ```
 
+
+> [Docker入门之安装教程 (qq.com)](https://mp.weixin.qq.com/s/dn2hF6FipvQCNItulK5wqQ) //验证
 > 更多docker资料见`./docker`
 
 
