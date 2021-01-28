@@ -79,7 +79,11 @@ docker build -t runoob/centos:6.7 .
 
 ## volume的三种方法
 
-1. docker run -d --name nginx_a -v /usr/share/nginx/html nginx
+1. 第一种
+
+> docker inspect nginx_a
+>
+> docker run -d --name nginx_a -v /usr/share/nginx/html nginx
 
 
 ## 命令大全
