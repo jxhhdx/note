@@ -33,7 +33,7 @@ docker container rm [containID] 简写： docker rm
 # 杀死容器
 docker container kill [containID]
 # 查看容器
-docker container ls 或者 docker container ls --all 简写: docker run 或者 docker run -a
+docker container ls 或者 docker container ls --all 简写: docker ls 或者 docker ls -a
 # host拷贝到容器
 docker cp
 # 保存拷贝之后的镜像
@@ -73,12 +73,21 @@ docker build -t runoob/centos:6.7 .
 | USER       | 指定用户                                                     |
 | VOLUME     | 挂载节点                                                     |
 
+## Volume
+
++ 提供独立于容器之外的持久化存储
+
+## volume的三种方法
+
+1. docker run -d --name nginx_a -v /usr/share/nginx/html nginx
+
+
 ## 命令大全
 
 >  https://www.runoob.com/docker/docker-command-manual.html 
 
 ## 镜像、资料
 
->  https://www.runoob.com/docker/docker-resources.html 
+>   [Docker 资源汇总](https://www.runoob.com/docker/docker-resources.html)
 >   [Docker 入门教程 - 阮一峰的网络日志 (ruanyifeng.com)](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html) 
 
