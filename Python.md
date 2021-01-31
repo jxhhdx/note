@@ -352,3 +352,6 @@ pip
 
 > 安装python运行环境`https://www.python.org`或Anaconda` https://www.anaconda.com/products/individual `
 
+# 参考资料
+
+[Google colab](https://colab.research.google.com/)

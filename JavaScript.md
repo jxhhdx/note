@@ -1287,3 +1287,8 @@ document.defaultView.getComputedStyle(DOM, NULL)
 + 底层原理依旧是重点（浏览器、事件循环）
 + 跨平台、跨段开发、工程自动化已成为了标配
 + 团队协同、Nodejs，全栈思维的培养
+
+# 学习资料
+
+[脚手架原理](https://mp.weixin.qq.com/s/xXZpI7D92XBRRXUyGcW9PQ)
+[前端学习思维导图](https://what-is-fe.gitee.io/)
