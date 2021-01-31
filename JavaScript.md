@@ -108,7 +108,49 @@ const [status, data, msg] = getUserInfo(123)
 // 数值和布尔值解构赋值
 ```
 
-## 字符串拓展
+## 异步编程
++ promise
+
+> 用来完成链式调用
+
++ async/await
+
+> async用来定义一个函数，经过async定义函数会放回一个Promise对象，await只能在async函数中使用，当执行到await的时候会暂停，等待触发的异步执行完成之后才会继续执行下去；
+
++ 宏任务和微任务
++ event loop模型
+
+## Proxy和Reflect
+
++ Proxy可以得到一个对一个对象的代理对象，通过代理对象操作原有的对象的时候，如果使用了handle方法，就可以得到一个指定的结果
+
+```javascript
+let target = {
+    name: 'Tom',
+    age: 24
+}
+let handler = {
+    get: function(target, key) {
+        console.log('getting '+key);
+        return target[key]; // 不是target.key
+    },
+    set: function(target, key, value) {
+        console.log('setting '+key);
+        target[key] = value;
+    }
+}
+let proxy = new Proxy(target, handler)
+proxy.name     // 实际执行 handler.get
+proxy.age = 25 // 实际执行 handler.set
+```
+
++ Reflect对某些方法的返回结果进行修改，让它变得更加合理
+
+## 装饰器 Devorator
+
+
+
+
 
 # JavaScript
 
@@ -1191,6 +1233,30 @@ dataset // 存放数据到标签
 // 获取样式属性
 document.defaultView.getComputedStyle(DOM, NULL)
 ```
+
+# 前端工具的使用
+
+## 制作自己的Cli
+
+[参考资料](https://mp.weixin.qq.com/s/xXZpI7D92XBRRXUyGcW9PQ)
+
++ 安装生成脚手架的工具
+> npm install -g  generator-generator yo
++ 使用yo生成脚手架
+> yo generator
+> 根据提示
+> 操作，或者使用默认选项
+
+## gitlab部署使用
++ 安装使用
++ HTTPS设置
++ 邮件通知
++ 路径端口映射
+
+## jinkin
+
+## docker搭建前端开发环境
+
 
 # 前端未来学习的方向
 
