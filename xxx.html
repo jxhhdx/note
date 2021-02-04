@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+var addTwoNumbers = function (l1, l2) {
+    let a = ''
+    let b = ''
+    while (l1) {
+        a = a + l1.val;
+        l1 = l1.next;
+    }
+    while (l2) {
+        b = b + l2.val;
+        l2 = l2.next;
+    }
+
+    let c = ((+a) + (+b)) + '';
+    c = [...c]
+    function parseToList(ln) {
+        debugger
+        let xxx = ln.length
+        if (ln.length == 1) {
+            let val = +ln.shift();
+            return {
+                val: val,
+                next: null
+            }
+        }
+        let val = +ln.shift();
+        return {
+            val: val,
+            next: parseToList(ln)
+        }
+    }
+    return parseToList(c);
+};
+        addTwoNumbers({val:1,next:{val:1,next:null}},{val:1,next:{val:1,next:null}})
+    </script>
+</body>
+
+</html>

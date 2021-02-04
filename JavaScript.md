@@ -272,7 +272,9 @@ npm install js-cookie  # 安装cookie
 
 # CSS
 
++ flex布局
 
+> [flex布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
 
 # Sass

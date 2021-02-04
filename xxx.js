@@ -1,14 +1,16 @@
-new Promise((resolve, reject)=>{
-    console.log("1");
-    resolve("==========");
-    console.log("2");
-    console.log("3");
-    console.log("4");
-    reject("-------")
-    let xxx = 1/0;
+var addTwoNumbers = function(l1, l2) {
+    let a = ''
+    let b = ''
+    while(l1){
+        a+=l1.val;
+        l1 = l1.next;
+    }
+    while(l2){
+        b+=l2.val;
+        l2 = l2.next;
+    }
+    let c = (+a)+(+b)
+    c = c.toString;
+    
 
-}).then((res)=>{
-    console.log(res);
-}).catch((rej)=>{
-    console.log(rej);
-})
+};
