@@ -272,7 +272,20 @@ npm install js-cookie  # 安装cookie
 
 # CSS
 
+## flex布局
 
++  Flex 是 Flexible Box 的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性。 
+
+常用的参数
+
+- flex-direction: row | row-reverse | column | column-reverse; 决定主轴的方向
+- flex-wrap: nowrap | wrap | wrap-reverse; 是否换行，默认不换行
+- flex-flow: <flex-direction> || <flex-wrap>; 以两者的简写
+- justify-content: flex-start | flex-end | center | space-between | space-around;居中方式
+- align-items: flex-start | flex-end | center | baseline | stretch;交叉轴上如何对齐
+- align-content: flex-start | flex-end | center | space-between | space-around | stretch; 多根轴线的对齐方式。 
+
+> [参考学习文献](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
 
 # Sass
@@ -714,6 +727,7 @@ Vue.use(VueRouter)
 
 
 # React
+
 ## 概述
 - react是一个用于构建用户界面的javascript库，它由facebook以及个人开发者和公司组成的社区开发。它拥有较高的性能，代码逻辑非常简单。
 
@@ -768,6 +782,17 @@ Vue.use(VueRouter)
 ## 路由
 
 +  http://react-guide.github.io/react-router-cn/docs/Introduction.html 
+
+## Hooks
+
+1. useState
+2. useEffect
+3. useLayoutEffect
+4. useMemo
+5. useCallback
+6. useRef
+7. useContext
+8. useReducer
 
 # 实践（React小游戏）
 
@@ -1108,7 +1133,9 @@ xhr.send(null)
 
 ## 安全
 
-+ XSS攻击：博客中插入<script>脚本，用户访问就将博客的cookie发送的攻击者服务器
++ XSS攻击：博客中
+
++ <script>脚本，用户访问就将博客的cookie发送的攻击者服务器
 
   转意`<`为`&gt`
   
@@ -1182,7 +1209,7 @@ arr.join("");              // 拼接数组成字符串，默认逗号分割，�
 arr.shift();               // 删除数组第一个，并返回
 arr.unshift();             // 添加到数组第一个
 arr.push();                // 添加到第最后一个
-arr.pop();                 // 删除的哥并返回
+arr.pop();                 // 删除第一个并返回
 arr.splice()               // 往数组之中添加
 arr.reverse();             // 翻转数组
 arr.toString();            // 数组转化为字符串，感觉不太有用诶w(ﾟДﾟ)w，还不如用join
